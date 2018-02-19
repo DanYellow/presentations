@@ -1,0 +1,3 @@
+https://medium.com/@jamesjefferyuk/javascript-what-are-pure-functions-4d4d5392d49c
+
+https://medium.com/javascript-scene/master-the-javascript-interview-what-is-function-composition-20dfb109a1a0
