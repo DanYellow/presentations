@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --config=./jestsetup.js",
-    "coverage": "npm run test -- --coverage"
+    "test:impure": "jest impure.test.js",
+    "test:pure": "jest pure.test.js",
+    "coverage": "jest --coverage --config=./jestsetup.js"
   },
   "keywords": [],
   "author": "",
