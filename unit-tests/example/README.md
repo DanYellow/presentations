@@ -10,3 +10,8 @@
 - http://2ality.com/2012/09/expressions-vs-statements.html
 - https://github.com/dwyl/learn-istanbul
 - https://en.wikipedia.org/wiki/Single_responsibility_principle
+
+### Commands
+- test impure functions: node_modules/.bin/jest impure.test.js 
+- test pure functions: node_modules/.bin/jest pure.test.js 
+- test coverage: node_modules/.bin/jest --collectCoverageFrom='["**/*.{js,jsx}"]' --coverage // The order is really important !!!
