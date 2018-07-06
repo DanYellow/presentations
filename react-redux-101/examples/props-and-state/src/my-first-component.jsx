@@ -16,7 +16,8 @@ class MyFirstComponent extends Component {
 
   updateMessage() {
     // We update the state. 
-    // Very important we use this.setState and not this.state.
+    // Very important: we use this.setState and not this.state 
+    // because this.state = {...} won't call component's render function
     this.setState({ 
       hello: 'world'
     })
@@ -25,7 +26,7 @@ class MyFirstComponent extends Component {
   render() {
     return (
       <div>
-        <MyChildComponent text={this.state.hello} /> {/* we pass props to the componentcd .. */}
+        <MyChildComponent text={this.state.hello} /> {/* we pass props to the component */}
       </div>
     );
   }
