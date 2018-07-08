@@ -8,15 +8,14 @@ export default class MyChildComponent extends Component {
   }
 
   handleClick() {
-    this.props.onClickCB()
+    this.props.onClickCB() // We call the props function from the parent
   }
 
   render() {
     return (
-      <p onClick={this.handleClick}>
-        Hello { this.props.text } {/* we display the props */}
+      <p onClick={this.handleClick}> {/* we bind an event on <p> */}
+        Hello { this.props.text }
       </p>
     );
   }
 }
-
