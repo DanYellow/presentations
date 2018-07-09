@@ -1,4 +1,4 @@
-const DEFAULT_STATE = { text: '' }
+const DEFAULT_STATE = ''
 
 const textarea = function (state = DEFAULT_STATE, action) {
     switch (action.type) {
