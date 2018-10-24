@@ -5,20 +5,34 @@ const schema = require('./src/schema')
 
 const PORT = 4000
 
-const root = { hello: () => ({ name: 'Hello world!' }) }
-
-// const root = { hello: () => ({
-//     character: {
-//         name: "fzefze"
-//     }
-// }) };
+const root = {
+  generateBook: () => ({
+    id: require('crypto')
+      .randomBytes(10)
+      .toString('hex'),
+    title: 'The catcher in the rye',
+    summary: 'Can make you a killer... :/',
+    releaseDate: new Date().toISOString(),
+    coverImage: 'https://via.placeholder.com/300.png/09f/fff',
+    author: {
+      firstName: 'Jerome David',
+      lastName: 'Salinger',
+      image: 'https://via.placeholder.com/300.png/09f/fff',
+    },
+    editor: {
+      name: 'Night books',
+      logo: 'https://via.placeholder.com/300.png/09f/fff',
+      creationDate: new Date().toISOString(),
+    },
+  }),
+}
 
 const app = express()
 app.use(
   '/graphql',
   graphqlHTTP({
+    rootValue: root,
     schema,
-    //   rootValue: root,
     graphiql: true,
   })
 )

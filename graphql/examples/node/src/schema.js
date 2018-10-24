@@ -3,6 +3,9 @@ const { makeExecutableSchema } = require('graphql-tools')
 const resolvers = require('./resolvers').resolvers
 
 const typeDefs = `
+    """
+    A book
+    """
     type Book {
         id: ID
         title: String
@@ -15,12 +18,14 @@ const typeDefs = `
     input BookInput {
         id: ID
         title: String!
-        editor: Editor!
-        author: Author!
+        editor: EditorInput!
+        author: AuthorInput!
         photo: String
+        summary: String
     }
 
     type Author {
+        id: ID
         firstName: String
         lastName: String
         books: [Book]
@@ -29,14 +34,16 @@ const typeDefs = `
     }
 
     input AuthorInput {
+        id: ID
         firstName: String!
         lastName: String!
-        books: [Book]!
-        editor: Editor!
+        books: [BookInput]
+        editor: EditorInput
         photo: String
     }
 
     type Editor {
+        id: ID
         name: String
         authors: [Author]
         books: [Book]
@@ -45,17 +52,19 @@ const typeDefs = `
     }
 
     input EditorInput {
+        id: ID
         name: String!
-        authors: [Author]
-        books: [Book]
+        authors: [AuthorInput]
+        books: [BookInput]
         creationDate: String
         photo: String
     }
 
     type Mutation {
-        createBook(input: BookInput): Book
-        updateBook(input: BookInput): Book
+        createBook(book: BookInput, author: AuthorInput): Book
+        updateBook(book: BookInput): Book
         deleteBook(id: ID!): String
+        generateBook: Book
 
         createAuthor(input: AuthorInput): Author
         updateAuthor(input: AuthorInput): Author
@@ -67,10 +76,15 @@ const typeDefs = `
     }
 
     type Query {
-        getBook(id: ID): Book
+        """
+        Fetch a book by ID
+        """
+        book(id: ID): Book
+        books: [Book]
     }
+
 `
 
 const schema = makeExecutableSchema({ typeDefs, resolvers })
 
-module.exports.schema = schema
+module.exports = schema

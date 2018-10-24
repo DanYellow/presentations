@@ -1,31 +1,32 @@
 const Entities = require('./entities')
-const db = require('./entities')
-const { book: Book, editor: Editor, author: Author } = Entities
+const { books: booksDB, authors: authorsDB, editors: editorsDB } = Entities
 
 module.exports.resolvers = {
   Query: {
-    getBook: ({ id }) => {
-      return db.book.find(book.id === id)
+    book: id => {
+      return booksDB.find(book.id === id)
+    },
+
+    books: () => {
+      return booksDB
     },
   },
   Mutation: {
-    createBook: (root, { input }) => {
-      const newBook = new Book({
-        title: input.title,
-        releaseDate: input.releaseDate,
-        coverImage: input.coverImage,
-        summary: input.summary,
-        author: input.author,
-      })
-
-      newBook.id = newBook._id
-      console.log('root', root, newBook.id)
+    createBook: (root, { book, author }) => {
+      const newBook = {
+        id: require('crypto')
+          .randomBytes(10)
+          .toString('hex'),
+        title: book.title,
+        releaseDate: book.releaseDate,
+        coverImage: book.coverImage,
+        summary: book.summary,
+        author,
+      }
 
       return new Promise(resolve => {
-        newFriend.save(err => {
-          if (err) reject(err)
-          else resolve(newBook)
-        })
+        booksDB.push(newBook)
+        resolve(newBook)
       })
     },
   },
