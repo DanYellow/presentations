@@ -5,7 +5,7 @@ const Utils = require('./utils');
 
 module.exports.resolvers = {
   Query: {
-    book: async (root, { id }) => {
+    book: async (_, { id }) => {
       const [err, book] = await Utils.to(
         Book.findOne({ where: { id } }, { raw: true })
       );
@@ -13,7 +13,6 @@ module.exports.resolvers = {
 
       return book;
     },
-
     books: async () => {
       const [err, books] = await Utils.to(Book.findAll({ raw: true }));
       if (err) return false;
@@ -21,7 +20,7 @@ module.exports.resolvers = {
     },
   },
   Mutation: {
-    createBook: async (root, { book, author }) => {
+    createBook: async (_, { book, author }) => {
       const [err, newBook] = await Utils.to(
         Book.create({
           ...book,

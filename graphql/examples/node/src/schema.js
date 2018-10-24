@@ -1,6 +1,6 @@
-const { makeExecutableSchema } = require('graphql-tools')
+const { makeExecutableSchema } = require('graphql-tools');
 
-const resolvers = require('./resolvers').resolvers
+const resolvers = require('./resolvers').resolvers;
 
 const typeDefs = `
     """
@@ -80,11 +80,11 @@ const typeDefs = `
         """
         Returns all books
         """
-        books: Book
+        books: [Book]
     }
 
-`
+`;
 
-const schema = makeExecutableSchema({ typeDefs, resolvers })
+const schema = makeExecutableSchema({ typeDefs, resolvers });
 
-module.exports = schema
+module.exports = schema;
