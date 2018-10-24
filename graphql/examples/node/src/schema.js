@@ -13,6 +13,7 @@ const typeDefs = `
         coverImage: String
         summary: String
         author: Author
+        editor: Editor
     }
 
     input BookInput {
@@ -20,13 +21,16 @@ const typeDefs = `
         title: String!
         coverImage: String
         summary: String
+        releaseDate: String
+        author: AuthorInput
+        editor: EditorInput
     }
 
     type Author {
         id: ID
         firstName: String
         lastName: String
-        book: [Book]
+        books: [Book]
         editor: Editor
         photo: String
     }
@@ -35,8 +39,9 @@ const typeDefs = `
         id: ID
         firstName: String!
         lastName: String!
-        editor: EditorInput
         photo: String
+        editor: EditorInput
+        books: [BookInput]
     }
 
     type Editor {
@@ -58,13 +63,13 @@ const typeDefs = `
     }
 
     type Mutation {
-        createBook(book: BookInput, author: AuthorInput): Book
+        createBook(book: BookInput, author: AuthorInput, editor: EditorInput): Book
         updateBook(book: BookInput): Book
         deleteBook(id: ID!): String
         generateBook: Book
 
-        createAuthor(input: AuthorInput): Author
-        updateAuthor(input: AuthorInput): Author
+        createAuthor(books: [BookInput], author: AuthorInput, editor: EditorInput): Author
+        updateAuthor(author: AuthorInput): Author
         deleteAuthor(id: ID!): String
         
         createEditor(input: EditorInput): Editor
@@ -81,8 +86,13 @@ const typeDefs = `
         Returns all books
         """
         books: [Book]
-    }
 
+        editors:[Editor]
+        editor:Editor
+
+        authors:[Author]
+        author(id: ID): Author
+    }
 `;
 
 const schema = makeExecutableSchema({ typeDefs, resolvers });
