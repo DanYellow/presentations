@@ -18,9 +18,7 @@ const typeDefs = `
     input BookInput {
         id: ID
         title: String!
-        editor: EditorInput!
-        author: AuthorInput!
-        photo: String
+        coverImage: String
         summary: String
     }
 
@@ -28,7 +26,7 @@ const typeDefs = `
         id: ID
         firstName: String
         lastName: String
-        books: [Book]
+        book: [Book]
         editor: Editor
         photo: String
     }
@@ -37,7 +35,6 @@ const typeDefs = `
         id: ID
         firstName: String!
         lastName: String!
-        books: [BookInput]
         editor: EditorInput
         photo: String
     }
@@ -46,7 +43,7 @@ const typeDefs = `
         id: ID
         name: String
         authors: [Author]
-        books: [Book]
+        book: [Book]
         creationDate: String
         photo: String
     }
@@ -55,7 +52,7 @@ const typeDefs = `
         id: ID
         name: String!
         authors: [AuthorInput]
-        books: [BookInput]
+        book: [BookInput]
         creationDate: String
         photo: String
     }
@@ -80,7 +77,10 @@ const typeDefs = `
         Fetch a book by ID
         """
         book(id: ID): Book
-        books: [Book]
+        """
+        Returns all books
+        """
+        books: Book
     }
 
 `

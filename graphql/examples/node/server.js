@@ -20,7 +20,7 @@ const root = {
       image: 'https://via.placeholder.com/300.png/09f/fff',
     },
     editor: {
-      name: 'Night books',
+      name: 'Night life',
       logo: 'https://via.placeholder.com/300.png/09f/fff',
       creationDate: new Date().toISOString(),
     },
@@ -31,7 +31,7 @@ const app = express()
 app.use(
   '/graphql',
   graphqlHTTP({
-    rootValue: root,
+    // rootValue: root,
     schema,
     graphiql: true,
   })

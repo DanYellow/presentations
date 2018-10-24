@@ -1,33 +1,34 @@
-const Entities = require('./entities')
-const { books: booksDB, authors: authorsDB, editors: editorsDB } = Entities
+const Entities = require('./entities.sql');
+const { book: Book, author: authorsDB, editors: editorsDB } = Entities;
+
+const Utils = require('./utils');
 
 module.exports.resolvers = {
   Query: {
-    book: id => {
-      return booksDB.find(book.id === id)
+    book: async (root, { id }) => {
+      const [err, book] = await Utils.to(
+        Book.findOne({ where: { id } }, { raw: true })
+      );
+      if (err) return false;
+
+      return book;
     },
 
-    books: () => {
-      return booksDB
+    books: async () => {
+      const [err, books] = await Utils.to(Book.findAll({ raw: true }));
+      if (err) return false;
+      return books;
     },
   },
   Mutation: {
-    createBook: (root, { book, author }) => {
-      const newBook = {
-        id: require('crypto')
-          .randomBytes(10)
-          .toString('hex'),
-        title: book.title,
-        releaseDate: book.releaseDate,
-        coverImage: book.coverImage,
-        summary: book.summary,
-        author,
-      }
-
-      return new Promise(resolve => {
-        booksDB.push(newBook)
-        resolve(newBook)
-      })
+    createBook: async (root, { book, author }) => {
+      const [err, newBook] = await Utils.to(
+        Book.create({
+          ...book,
+        })
+      );
+      if (err) return false;
+      return newBook;
     },
   },
-}
+};

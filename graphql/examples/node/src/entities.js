@@ -9,7 +9,7 @@ module.exports = {
         lastName: 'Salinger',
       },
       editor: {
-        name: 'Night books',
+        name: 'Night life',
       },
     },
   ],

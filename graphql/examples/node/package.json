@@ -17,6 +17,8 @@
     "express-graphql": "^0.6.12",
     "graphql": "^14.0.2",
     "graphql-tools": "^4.0.2",
-    "mongoose": "^5.3.5"
+    "mongoose": "^5.3.5",
+    "sequelize": "^4.41.0",
+    "sqlite3": "^4.0.3"
   }
 }
