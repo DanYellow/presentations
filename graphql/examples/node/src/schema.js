@@ -31,7 +31,7 @@ const typeDefs = `
         firstName: String
         lastName: String
         books: [Book]
-        editor: Editor
+        editors: [Editor]
         photo: String
     }
 
@@ -40,7 +40,7 @@ const typeDefs = `
         firstName: String!
         lastName: String!
         photo: String
-        editor: EditorInput
+        editors: [EditorInput]
         books: [BookInput]
     }
 
@@ -48,7 +48,7 @@ const typeDefs = `
         id: ID
         name: String
         authors: [Author]
-        book: [Book]
+        books: [Book]
         creationDate: String
         photo: String
     }
@@ -57,7 +57,7 @@ const typeDefs = `
         id: ID
         name: String!
         authors: [AuthorInput]
-        book: [BookInput]
+        books: [BookInput]
         creationDate: String
         photo: String
     }
@@ -68,15 +68,15 @@ const typeDefs = `
         deleteBook(id: ID!): String
         generateBook: Book
 
-        createAuthor(books: [BookInput], author: AuthorInput, editor: EditorInput): Author
+        createAuthor(books: [BookInput], author: AuthorInput, editors: [EditorInput]): Author
         updateAuthor(author: AuthorInput): Author
         deleteAuthor(id: ID!): String
         
-        createEditor(input: EditorInput): Editor
+        createEditor(editor: EditorInput, authors: [AuthorInput]): Editor
         updateEditor(input: EditorInput): Editor
         deleteEditor(id: ID!): String
     }
-
+    
     type Query {
         """
         Fetch a book by ID
@@ -86,10 +86,10 @@ const typeDefs = `
         Returns all books
         """
         books: [Book]
-
+        
         editors:[Editor]
-        editor:Editor
-
+        editor(id: ID):Editor
+        
         authors:[Author]
         author(id: ID): Author
     }

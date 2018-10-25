@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize');
-const sequelize = new Sequelize('database', null, null, {
+const sequelize = new Sequelize('library', null, null, {
   host: 'localhost',
   dialect: 'sqlite',
   operatorsAliases: false,
@@ -12,7 +12,7 @@ const sequelize = new Sequelize('database', null, null, {
   },
 
   // SQLite only
-  storage: './library.sqlite',
+  storage: `./library.sqlite`,
 });
 
 sequelize
@@ -23,6 +23,8 @@ sequelize
   .catch(err => {
     console.error('Unable to connect to the database:', err);
   });
+
+const AuthorEditor = sequelize.define('author_editor', {});
 
 const Book = sequelize.define('book', {
   title: Sequelize.STRING,
@@ -43,10 +45,6 @@ const Author = sequelize.define('author', {
   photo: Sequelize.STRING,
 });
 
-const AuthorEditor = sequelize.define('author_editor', {
-  link: Sequelize.STRING,
-});
-
 // Relationships
 Author.hasMany(Book);
 Editor.hasMany(Book);
@@ -54,8 +52,12 @@ Editor.hasMany(Book);
 Book.belongsTo(Author);
 Book.belongsTo(Editor);
 
-Author.belongsToMany(AuthorEditor, { through: AuthorEditor });
-Editor.belongsToMany(AuthorEditor, { through: AuthorEditor });
+Author.belongsToMany(Editor, {
+  through: AuthorEditor,
+});
+Editor.belongsToMany(Author, {
+  through: AuthorEditor,
+});
 
 /**
  * Update dataschema
@@ -64,6 +66,8 @@ Editor.belongsToMany(AuthorEditor, { through: AuthorEditor });
 // Book.sync({ force: true });
 // Author.sync({ force: true });
 // Editor.sync({ force: true });
+
+// sequelize.sync({ force: true });
 
 module.exports.book = Book;
 module.exports.author = Author;
