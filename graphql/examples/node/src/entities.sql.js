@@ -71,7 +71,8 @@ Editor.belongsToMany(Author, {
 // Editor.sync({ force: true });
 
 sequelize.sync({ force: true }).then(() => {
-  times(10, i => {
+  times(10, _ => {
+    console.log('name3', faker.name.lastName());
     Book.create(
       {
         title: faker.lorem.sentence(),
@@ -79,8 +80,8 @@ sequelize.sync({ force: true }).then(() => {
         summary: faker.lorem.text(),
         coverImage: faker.image.image(),
         author: {
-          lastName: faker.name.findName().lastName,
-          firstName: faker.name.findName().firstName,
+          lastName: faker.name.lastName(),
+          firstName: faker.name.firstName(),
           coverImage: faker.image.image(),
         },
         editor: {

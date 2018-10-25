@@ -17,7 +17,9 @@ module.exports = {
       return book;
     },
     books: async () => {
-      const [err, books] = await Utils.to(Book.findAll({ raw: true }));
+      const [err, books] = await Utils.to(
+        Book.findAll({ include: [Author, Editor] }, { raw: true })
+      );
 
       if (err) return false;
       return books;

@@ -1,50 +1,121 @@
-```js
-query GetBook {
-  getBook(id: "c1bae59aa242f504efc8") {
+```
+query GetAllBooks {
+  books {
     id
+    title
+    releaseDate
+    coverImage
+    summary
+    author {
+      lastName
+      firstName
+    }
+    editor {
+      ...editorFields
+    }
   }
 }
 
-query GetBooks {
-  getBooks {
-    id,
-    title,
+query GetBookByID {
+  book(id: 3) {
+    id
+    title
     author {
-      id,
       firstName
     }
   }
 }
 
-mutation CreateBook($book: BookInput, $author: AuthorInput) {
-  createBook(book: $book, author: $author) {
+mutation CreateBook($book: BookInput, $author: AuthorInput, $editor: EditorInput) {
+  createBook(book: $book, author: $author, editor: $editor) {
     id
     title
-    summary,
+    summary
+    releaseDate
     author {
       firstName
       lastName
-      editor {
-		name
-      }
-
+    }
+    editor {
+      name
     }
   }
 }
-```
 
-```
-{
-  "book": {
-    "title": "The catcher in the rye",
-    "summary": "Can make you a killer... :/",
-    "author": {
-      "firstName": "Jerome",
-      "lastName": "Salinger"
-    },
-    "editor": {
-      "name": "Night books"
+query GetAllAuthors {
+  authors {
+    id
+    lastName
+    firstName
+    editors {
+      ...editorFields
     }
+  }
+}
+
+query GetAuthorByID {
+  author(id: 3) {
+    id
+    lastName
+    firstName
+    editors {
+      ...editorFields
+    }
+  }
+}
+
+mutation CreateAuthor($books: [BookInput], $author: AuthorInput, $editors: [EditorInput]) {
+  createAuthor(books: $books, author: $author, editors: $editors) {
+    id
+    firstName
+    lastName
+    books {
+      title
+    }
+    editors {
+      name
+    }
+  }
+}
+
+query GetAllEditors {
+  editors {
+    id
+    name
+    authors {
+      id
+      lastName
+    }
+  }
+}
+
+query GetEditorByID {
+  editor(id: 1) {
+    id
+    ...editorFields
+  }
+}
+
+
+mutation CreateEditor($authors: [AuthorInput], $editor: EditorInput) {
+  createEditor(authors: $authors, editor: $editor) {
+    id
+    name
+    authors {
+      firstName
+      lastName
+    }
+  }
+}
+
+fragment editorFields on Editor {
+  id
+  name
+  books {
+    id
+  }
+  authors {
+    id
   }
 }
 ```
