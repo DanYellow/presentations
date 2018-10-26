@@ -62,17 +62,8 @@ Editor.belongsToMany(Author, {
   through: AuthorEditor,
 });
 
-/**
- * Update dataschema
- * Will delete all tables' content
- */
-// Book.sync({ force: true });
-// Author.sync({ force: true });
-// Editor.sync({ force: true });
-
 sequelize.sync({ force: true }).then(() => {
-  times(10, _ => {
-    console.log('name3', faker.name.lastName());
+  times(10, i => {
     Book.create(
       {
         title: faker.lorem.sentence(),
@@ -81,7 +72,7 @@ sequelize.sync({ force: true }).then(() => {
         coverImage: faker.image.image(),
         author: {
           lastName: faker.name.lastName(),
-          firstName: faker.name.firstName(),
+          firstName: i % 2 ? faker.name.firstName() : 'Rick',
           coverImage: faker.image.image(),
         },
         editor: {

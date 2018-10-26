@@ -83,9 +83,10 @@ const typeDefs = `
         """
         book(id: ID): Book
         """
-        Returns all books
+        Returns all books.
+        You can fetch books by author's firstName or lastName
         """
-        books: [Book]
+        books(author: AuthorInput): [Book]
         
         editors:[Editor]
         editor(id: ID):Editor

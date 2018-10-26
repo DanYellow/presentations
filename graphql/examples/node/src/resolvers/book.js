@@ -1,3 +1,6 @@
+const Sequelize = require('sequelize');
+const Op = Sequelize.Op;
+
 const Entities = require('../entities.sql');
 const { book: Book, author: Author, editor: Editor } = Entities;
 
@@ -16,9 +19,29 @@ module.exports = {
 
       return book;
     },
-    books: async () => {
+    books: async (_, { author }) => {
       const [err, books] = await Utils.to(
-        Book.findAll({ include: [Author, Editor] }, { raw: true })
+        Book.findAll(
+          {
+            include: [
+              {
+                model: Author,
+                ...(author
+                  ? {
+                      where: {
+                        [Op.or]: [
+                          { lastName: author.lastName },
+                          { firstName: author.firstName },
+                        ],
+                      },
+                    }
+                  : {}),
+              },
+              Editor,
+            ],
+          },
+          { raw: true }
+        )
       );
 
       if (err) return false;
