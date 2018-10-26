@@ -89,3 +89,27 @@ sequelize.sync({ force: true }).then(() => {
 module.exports.book = Book;
 module.exports.author = Author;
 module.exports.editor = Editor;
+
+const clearDatabase = () => {
+  Book.destroy({
+    where: {},
+    truncate: true,
+  });
+
+  Author.destroy({
+    where: {},
+    truncate: true,
+  });
+
+  Editor.destroy({
+    where: {},
+    truncate: true,
+  });
+
+  AuthorEditor.destroy({
+    where: {},
+    truncate: true,
+  });
+};
+
+// clearDatabase();

@@ -65,16 +65,17 @@ const typeDefs = `
     type Mutation {
         createBook(book: BookInput, author: AuthorInput, editor: EditorInput): Book
         updateBook(book: BookInput): Book
-        deleteBook(id: ID!): String
+        deleteBook(id: ID!): Author
         generateBook: Book
 
-        createAuthor(books: [BookInput], author: AuthorInput, editors: [EditorInput]): Author
+        createAuthor(books: [BookInput], author: AuthorInput): Author
+        addEditorToAuthor(editor: EditorInput, author: AuthorInput): Author
         updateAuthor(author: AuthorInput): Author
         deleteAuthor(id: ID!): String
         
         createEditor(editor: EditorInput, authors: [AuthorInput]): Editor
         updateEditor(input: EditorInput): Editor
-        deleteEditor(id: ID!): String
+        deleteEditor(id: ID!): Author
     }
     
     type Query {

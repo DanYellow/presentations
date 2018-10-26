@@ -1,4 +1,4 @@
-```
+```graphql
 query GetAllBooks {
   books {
     id
@@ -11,22 +11,44 @@ query GetAllBooks {
       firstName
     }
     editor {
-      ...editorFields
+      name
+    }
+  }
+}
+
+query GetAllRicksBooks {
+  getRicksBooks: books(author: { firstName: "Rick", lastName: "null" }) {
+    id
+    title
+    releaseDate
+    coverImage
+    summary
+    author {
+      lastName
+      firstName
+    }
+    editor {
+      name
     }
   }
 }
 
 query GetBookByID {
-  book(id: 3) {
+  book(id: 1) {
     id
     title
     author {
       firstName
+      lastName
     }
   }
 }
 
-mutation CreateBook($book: BookInput, $author: AuthorInput, $editor: EditorInput) {
+mutation CreateBook(
+  $book: BookInput
+  $author: AuthorInput
+  $editor: EditorInput
+) {
   createBook(book: $book, author: $author, editor: $editor) {
     id
     title
@@ -54,7 +76,7 @@ query GetAllAuthors {
 }
 
 query GetAuthorByID {
-  author(id: 3) {
+  author(id: 1) {
     id
     lastName
     firstName
@@ -64,7 +86,11 @@ query GetAuthorByID {
   }
 }
 
-mutation CreateAuthor($books: [BookInput], $author: AuthorInput, $editors: [EditorInput]) {
+mutation CreateAuthor(
+  $books: [BookInput]
+  $author: AuthorInput
+  $editors: [EditorInput]
+) {
   createAuthor(books: $books, author: $author, editors: $editors) {
     id
     firstName
@@ -96,7 +122,6 @@ query GetEditorByID {
   }
 }
 
-
 mutation CreateEditor($authors: [AuthorInput], $editor: EditorInput) {
   createEditor(authors: $authors, editor: $editor) {
     id
@@ -116,6 +141,44 @@ fragment editorFields on Editor {
   }
   authors {
     id
+  }
+}
+```
+
+### Variables
+
+#### CreateAuthor
+
+($books: [BookInput], $author: AuthorInput, $editors: [EditorInput])
+
+```js
+{
+  "author": {
+    "firstName": "Aldous",
+    "lastName": "Huxley"
+  },
+  "books": [
+    {
+      "title": "Brave New World",
+      "summary": "The novel opens in the World State city of London in AF (After Ford) 632 (AD 2540 in the Gregorian calendar), where citizens are engineered through artificial wombs and childhood indoctrination programmes into predetermined classes (or castes) based on intelligence and labour. - Wikipedia",
+      "editor": {
+        "name": "Chatto & Windus"
+      }
+    }
+  ]
+}
+```
+
+#### AddEditorToAuthor
+
+```js
+{
+   "author": {
+    "firstName": "Aldous",
+    "lastName": "Huxley"
+  },
+  "editor": {
+    "name": "Hello world"
   }
 }
 ```
