@@ -86,12 +86,8 @@ query GetAuthorByID {
   }
 }
 
-mutation CreateAuthor(
-  $books: [BookInput]
-  $author: AuthorInput
-  $editors: [EditorInput]
-) {
-  createAuthor(books: $books, author: $author, editors: $editors) {
+mutation CreateAuthor($books: [BookInput], $author: AuthorInput) {
+  createAuthor(books: $books, author: $author) {
     id
     firstName
     lastName
@@ -104,6 +100,24 @@ mutation CreateAuthor(
   }
 }
 
+mutation AddEditorToAuthor($editor: EditorInput, $author: AuthorInput) {
+  addEditorToAuthor(editor: $editor, author: $author) {
+    id
+    firstName
+    lastName
+    books {
+      title
+    }
+    editors {
+      name
+    }
+  }
+}
+
+mutation DeleteAuthor {
+  deleteAuthor(id: 10)
+}
+
 query GetAllEditors {
   editors {
     id
@@ -111,6 +125,13 @@ query GetAllEditors {
     authors {
       id
       lastName
+      firstName
+      books {
+        title
+      }
+    }
+    books {
+      title
     }
   }
 }

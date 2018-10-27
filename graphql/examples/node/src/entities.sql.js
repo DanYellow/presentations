@@ -62,29 +62,29 @@ Editor.belongsToMany(Author, {
   through: AuthorEditor,
 });
 
-sequelize.sync({ force: true }).then(() => {
-  times(10, i => {
-    Book.create(
-      {
-        title: faker.lorem.sentence(),
-        releaseDate: faker.date.past(),
-        summary: faker.lorem.text(),
-        coverImage: faker.image.image(),
-        author: {
-          lastName: faker.name.lastName(),
-          firstName: i % 2 ? faker.name.firstName() : 'Rick',
-          coverImage: faker.image.image(),
-        },
-        editor: {
-          name: faker.lorem.sentence(),
-        },
-      },
-      {
-        include: [Author, Editor],
-      }
-    );
-  });
-});
+// sequelize.sync({ force: true }).then(() => {
+//   times(10, i => {
+//     Book.create(
+//       {
+//         title: faker.lorem.sentence(),
+//         releaseDate: faker.date.past(),
+//         summary: faker.lorem.text(),
+//         coverImage: faker.image.image(),
+//         author: {
+//           lastName: faker.name.lastName(),
+//           firstName: i % 2 ? faker.name.firstName() : 'Rick',
+//           coverImage: faker.image.image(),
+//         },
+//         editor: {
+//           name: faker.lorem.sentence(),
+//         },
+//       },
+//       {
+//         include: [Author, Editor],
+//       }
+//     );
+//   });
+// });
 
 module.exports.book = Book;
 module.exports.author = Author;

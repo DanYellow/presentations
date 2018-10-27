@@ -33,13 +33,12 @@ module.exports = {
     },
   },
   Mutation: {
-    createAuthor: async (_, { books, author }) => {
+    createAuthor: async (_, { books = [], author }) => {
       const [err, newAuthor] = await Utils.to(
         Author.create(
           {
             ...author,
             books,
-            // editors: [books.editor],
           },
           {
             include: [Book],
@@ -59,8 +58,9 @@ module.exports = {
             }
           )
         );
-        // newEditor.addBook(book);
-        newAuthor.addEditor(newEditor);
+        // if (!errEditor) {
+        await newAuthor.addEditor(newEditor);
+        // }
       });
 
       if (err) return false;
@@ -112,7 +112,7 @@ module.exports = {
             ...editor,
           })
         );
-        foundAuthor.addEditor(newEditor);
+        await foundAuthor.addEditor(newEditor);
 
         if (newEditorError) return false;
       }
