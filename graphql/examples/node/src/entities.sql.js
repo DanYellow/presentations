@@ -62,6 +62,7 @@ Editor.belongsToMany(Author, {
   through: AuthorEditor,
 });
 
+// Clear DB
 // sequelize.sync({ force: true }).then(() => {
 //   times(10, i => {
 //     Book.create(
