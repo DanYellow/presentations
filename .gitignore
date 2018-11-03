@@ -54,8 +54,9 @@ typings/
 *.tgz
 
 # Yarn Integrity file
-.yarn-integrity
+.yarn-integrit
 
 # dotenv environment variables file
 .env
 
+react-redux-101/
