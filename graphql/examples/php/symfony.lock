@@ -74,6 +74,9 @@
             "ref": "70062abc2cd58794d2a90274502f81b55cd9951b"
         }
     },
+    "ecodev/graphql-doctrine": {
+        "version": "5.0.1"
+    },
     "egulias/email-validator": {
         "version": "2.1.6"
     },

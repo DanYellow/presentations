@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "3379b7986aef2547dc0b6e67f4f0ee6e",
+    "content-hash": "d0bb7d45250e437d74e7d52c8c90ed02",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -1169,6 +1169,51 @@
                 "reflection"
             ],
             "time": "2018-06-14T14:45:07+00:00"
+        },
+        {
+            "name": "ecodev/graphql-doctrine",
+            "version": "5.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Ecodev/graphql-doctrine.git",
+                "reference": "65bf449a94ae9e7cb1c82f91d2d5f00cc59e85fd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Ecodev/graphql-doctrine/zipball/65bf449a94ae9e7cb1c82f91d2d5f00cc59e85fd",
+                "reference": "65bf449a94ae9e7cb1c82f91d2d5f00cc59e85fd",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/orm": "^2.5",
+                "php": "^7.1",
+                "psr/container": "^1.0",
+                "webonyx/graphql-php": "^0.12.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "@stable",
+                "phpstan/phpstan": "^0.10.2",
+                "phpunit/phpunit": "@stable",
+                "zendframework/zend-servicemanager": "^3.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "GraphQL\\Doctrine\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Declare GraphQL types from Doctrine entities and annotations",
+            "keywords": [
+                "api",
+                "doctrine",
+                "doctrine-orm",
+                "graphql"
+            ],
+            "time": "2018-10-23T03:52:36+00:00"
         },
         {
             "name": "egulias/email-validator",
