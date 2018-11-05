@@ -36,7 +36,8 @@ class GraphQLController extends AbstractController
         try {
             $rootValue = ['prefix' => 'You said: '];
             $result = GraphQL::executeQuery($schema, $query, $rootValue, null, $variableValues);
-            $output = $result->toArray();
+            $output = $result;
+            // $output = $result->toArray();
         } catch (\Exception $e) {
             $output = [
                 'errors' => [
@@ -48,6 +49,7 @@ class GraphQLController extends AbstractController
         }
 
         return new JsonResponse($output);
+        return new JsonResponse($em->createQuery('SELECT u FROM App\Entity\Book u')->getArrayResult());
         return new JsonResponse($em->getRepository('App\Entity\Book')->findAll());
     }
 }

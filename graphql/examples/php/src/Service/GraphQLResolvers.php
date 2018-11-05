@@ -3,13 +3,12 @@
 namespace App\Service;
 
 use GraphQL\Type\Definition\ObjectType;
-use GraphQL\Type\Definition\Type;
 
 // use Doctrine\ORM\EntityManager;
 
-use App\Entity\Book;
+use GraphQL\Type\Definition\Type;
 
-class GraphQLResolvers 
+class GraphQLResolvers
 {
     public function getQuery($em)
     {
@@ -20,25 +19,33 @@ class GraphQLResolvers
                 'id' => Type::id(),
                 'title' => [
                     'type' => Type::string(),
-                    'description' => 'Type of the book'
+                    'description' => 'Type of the book',
                 ],
                 'releaseDate' => Type::string(),
                 'coverImage' => Type::string(),
-                'summary' => Type::string()
-            ]
+                'summary' => Type::string(),
+            ],
         ]);
-        var_dump($em->getRepository(Book::class)->findAll());
+
         $queryType = new ObjectType([
             'name' => 'Query',
             'fields' => [
-                'books' => [
+                'allBooks' => [
+                    // 'type' => Type::listOf(Type::string()),
                     'type' => Type::listOf($bookType),
                     'description' => 'books description',
-                    'args' => [],
-                    'resolve' => function ($root, $args) {
-                        return $em->getRepository(Book::class)->findAll()->getArrayResult();
-                        return [];
-                    }
+                    'resolve' => function () {
+                        // $result = $em->getRepository('App\Entity\Book')->findAll();
+                        return ["book" => [
+                            'id' => 1,
+                            'title' => 'Truc',
+                            'releaseDate' => 'Truc',
+                            'coverImage' => 'Truc',
+                            'summary' => 'Truc',
+                        ]];
+                        // return $result;
+                        // return $em->getRepository('App\Entity\Book')->findAll();
+                    },
                 ],
             ],
         ]);
@@ -46,4 +53,3 @@ class GraphQLResolvers
         return $queryType;
     }
 }
-
