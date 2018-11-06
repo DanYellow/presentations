@@ -39,13 +39,13 @@ class Book implements \JsonSerializable
     private $release_date;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Author", mappedBy="books")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Author", inversedBy="books")
+     * @ORM\JoinColumn(nullable=false)
      */
-    private $authors;
+    private $author;
 
     public function __construct()
     {
-        $this->authors = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -101,41 +101,22 @@ class Book implements \JsonSerializable
         return $this;
     }
 
-    /**
-     * @return Collection|Author[]
-     */
-    public function getAuthors(): Collection
-    {
-        return $this->authors;
-    }
-
-    public function addAuthor(Author $author): self
-    {
-        if (!$this->authors->contains($author)) {
-            $this->authors[] = $author;
-            $author->setBooks($this);
-        }
-
-        return $this;
-    }
-
-    public function removeAuthor(Author $author): self
-    {
-        if ($this->authors->contains($author)) {
-            $this->authors->removeElement($author);
-            // set the owning side to null (unless already changed)
-            if ($author->getBooks() === $this) {
-                $author->setBooks(null);
-            }
-        }
-
-        return $this;
-    }
-
     public function jsonSerialize() 
     {
         return [
             'id' => $this->getId()
         ];
+    }
+
+    public function getAuthor(): ?Author
+    {
+        return $this->author;
+    }
+
+    public function setAuthor(?Author $author): self
+    {
+        $this->author = $author;
+
+        return $this;
     }
 }

@@ -34,18 +34,19 @@ class Author
     private $photo;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Book", inversedBy="authors")
-     */
-    private $books;
-
-    /**
      * @ORM\ManyToMany(targetEntity="App\Entity\Editor", inversedBy="authors")
      */
     private $editors;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Book", mappedBy="author", orphanRemoval=true)
+     */
+    private $books;
+
     public function __construct()
     {
         $this->editors = new ArrayCollection();
+        $this->books = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -89,18 +90,6 @@ class Author
         return $this;
     }
 
-    public function getBooks(): ?Book
-    {
-        return $this->books;
-    }
-
-    public function setBooks(?Book $books): self
-    {
-        $this->books = $books;
-
-        return $this;
-    }
-
     /**
      * @return Collection|Editor[]
      */
@@ -122,6 +111,37 @@ class Author
     {
         if ($this->editors->contains($editor)) {
             $this->editors->removeElement($editor);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Book[]
+     */
+    public function getBooks(): Collection
+    {
+        return $this->books;
+    }
+
+    public function addBook(Book $book): self
+    {
+        if (!$this->books->contains($book)) {
+            $this->books[] = $book;
+            $book->setAuthor($this);
+        }
+
+        return $this;
+    }
+
+    public function removeBook(Book $book): self
+    {
+        if ($this->books->contains($book)) {
+            $this->books->removeElement($book);
+            // set the owning side to null (unless already changed)
+            if ($book->getAuthor() === $this) {
+                $book->setAuthor(null);
+            }
         }
 
         return $this;

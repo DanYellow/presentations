@@ -8,10 +8,14 @@ use GraphQL\Type\Definition\Type;
 
 use App\QueryTypes\BookType;
 use App\QueryTypes\AuthorType;
+use App\QueryTypes\EditorType;
+
+use App\TypeRegistry;
 
 class QueryType extends ObjectType
 {
     private $em;
+    
     public function __construct($em)
     {
         $this->em = $em;
@@ -20,18 +24,25 @@ class QueryType extends ObjectType
             "name" => "Query",
             "fields" => [
                 'allBooks' => [
-                    'type' => Type::listOf(new BookType()),
+                    'type' => Type::listOf(TypeRegistry::book()),
                     'description' => 'Returns stuffs',
                     "args" => [
                         "id" => Type::id(),
                     ]
                 ],
                 'allAuthors' => [
-                    'type' => Type::listOf(new AuthorType()),
+                    'type' => Type::listOf(TypeRegistry::author()),
                     'description' => 'Returns authors',
                     "args" => [
                         "lastName" => Type::string(),
                         "firstName" => Type::string(),
+                    ]
+                ],
+                'allEditors' => [
+                    'type' => Type::listOf(TypeRegistry::editor()),
+                    'description' => 'Returns editors',
+                    "args" => [
+                        "name" => Type::string(),
                     ]
                 ],
                 "hello" => Type::string()

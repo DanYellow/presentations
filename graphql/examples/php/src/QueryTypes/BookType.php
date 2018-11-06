@@ -6,6 +6,8 @@ use GraphQL\Type\Definition\ObjectType;
 use GraphQL\Type\Definition\ResolveInfo;
 use GraphQL\Type\Definition\Type;
 
+use App\TypeRegistry;
+
 class BookType extends ObjectType
 {
     public function __construct()
@@ -24,6 +26,7 @@ class BookType extends ObjectType
                 'releaseDate' => Type::string(),
                 'coverImage' => Type::string(),
                 'summary' => Type::string(),
+                // 'author' => TypeRegistry::author()
             ],
         ];
         parent::__construct($config);

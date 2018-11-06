@@ -11,7 +11,9 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 
 use GraphQL\GraphQL;
 use GraphQL\Type\Schema;
+
 use App\QueryTypes\QueryType;
+use App\MutationTypes\MutationType;
 
 use App\Entity\Book;
 
@@ -20,27 +22,19 @@ class GraphQLController extends AbstractController
     /**
      * @Route("/graphql", name="graphql")
      */
-    public function index(GraphQLResolvers $graphQLResolver)
+    public function index()
     {
         $em = $this->getDoctrine()->getManager();
 
         $schema = new Schema([
-            'query' => new QueryType($em)
-            // $graphQLResolver->getQuery($em)
+            'query' => new QueryType($em),
+            'mutation' => new MutationType($em),
         ]);
         $rawInput = file_get_contents('php://input');
         $input = json_decode($rawInput, true);
         $query = $input['query'];
 
-        // $result = $em->getRepository('App\Entity\Book')->findAll();
-        // $final = [];
-        // foreach($result as $val) {
-        //     array_push($final, ['id' => $val->getId()]);
-        // }
-        // var_dump($final);
-
-        // $variableValues = isset($input['variables']) ? $input['variables'] : null;
-        $variableValues = null;
+        $variableValues = isset($input['variables']) ? $input['variables'] : null;
 
         try {
             $rootValue = ['prefix' => 'You said: '];
