@@ -9,7 +9,7 @@ use GraphQL\Type\Definition\Type;
 use App\Entity\Book;
 use App\Entity\Author;
 
-use App\TypeRegistry as TypeRegistry;
+use App\TypeRegistry;
 
 class EditorType extends ObjectType
 {

@@ -14,16 +14,19 @@ class TypeRegistry
 
     public static function book()
     {
+        // return $this->book ?: ($this->book = new BookType($this));
         return self::$book ?: (self::$book = new BookType());
     }
 
     public static function author()
     {
+        // return $this->author ?: ($this->author = new AuthorType($this));
         return self::$author ?: (self::$author = new AuthorType());
     }
 
     public static function editor()
     {
+        // return $this->editor ?: ($this->editor = new EditorType($this));
         return self::$editor ?: (self::$editor = new EditorType());
     }
 }

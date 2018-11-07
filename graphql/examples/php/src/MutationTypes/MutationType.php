@@ -8,10 +8,6 @@ use GraphQL\Type\Definition\Type;
 
 use Faker\Factory as Faker;
 
-
-use App\QueryTypes\AuthorType;
-use App\QueryTypes\EditorType;
-
 use App\Entity\Book;
 use App\Entity\Author;
 use App\Entity\Editor;
@@ -53,8 +49,11 @@ class MutationType extends ObjectType
     public function generateBook()
     {
         $newAuthor = new Author();
-        $newAuthor->setFirstName($this->faker->name);
-        $newAuthor->setLastName($this->faker->name);
+        $newAuthor->setFirstName($this->faker->firstName);
+        $newAuthor->setLastName($this->faker->firstName);
+
+        $this->em->persist($newAuthor);
+        $this->em->flush();
 
         $newBook = new Book();
         $newBook->setTitle($this->faker->name);
@@ -64,17 +63,16 @@ class MutationType extends ObjectType
         $this->em->persist($newBook);
         $this->em->flush();
 
-
         $final = [
             'id' => $newBook->getId(),
             'summary' => $newBook->getSummary(),
             'title' => $newBook->getTitle(),
             'coverImage' => $newBook->getCoverImage(),
-            // 'author' => [
-            //     'id' => $newAuthor->getId(),
-            //     'firstname' => $newAuthor->getFirstName(),
-            //     'lastname' => $newAuthor->getLastName(),
-            // ]
+            'author' => [
+                'id' => $newAuthor->getId(),
+                'firstname' => $newAuthor->getFirstName(),
+                'lastname' => $newAuthor->getLastName(),
+            ]
         ];
 
         return $final;

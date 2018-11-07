@@ -16,20 +16,34 @@ use App\QueryTypes\QueryType;
 use App\MutationTypes\MutationType;
 
 use App\Entity\Book;
+use App\Entity\Author;
+use App\Entity\Editor;
+
+use Faker\Factory as Faker;
+
+use GraphQL\Error\Debug;
+
+use App\TypeRegistry;
 
 class GraphQLController extends AbstractController
 {
     /**
      * @Route("/graphql", name="graphql")
      */
-    public function index()
+    public function graphql()
     {
         $em = $this->getDoctrine()->getManager();
 
-        $schema = new Schema([
-            'query' => new QueryType($em),
-            'mutation' => new MutationType($em),
-        ]);
+        try {
+
+            $schema = new Schema([
+                'query' => new QueryType($em),
+                'mutation' => new MutationType($em),
+            ]);
+            $schema->assertValid();
+        } catch (GraphQL\Error\InvariantViolation $e) {
+            echo $e->getMessage();
+        }
         $rawInput = file_get_contents('php://input');
         $input = json_decode($rawInput, true);
         $query = $input['query'];
@@ -37,10 +51,9 @@ class GraphQLController extends AbstractController
         $variableValues = isset($input['variables']) ? $input['variables'] : null;
 
         try {
-            $rootValue = ['prefix' => 'You said: '];
+            $debug = Debug::INCLUDE_DEBUG_MESSAGE | Debug::INCLUDE_TRACE;
             $result = GraphQL::executeQuery($schema, $query, null, null, $variableValues);
-            $output = $result;
-            // $output = $result->toArray();
+            $output = $result->toArray($debug);
         } catch (\Exception $e) {
             $output = [
                 'errors' => [
@@ -52,7 +65,40 @@ class GraphQLController extends AbstractController
         }
 
         return new JsonResponse($output);
-        return new JsonResponse($em->createQuery('SELECT u FROM App\Entity\Book u')->getArrayResult());
-        return new JsonResponse($em->getRepository('App\Entity\Book')->findAll());
+    }
+
+    /**
+     * @Route("/doctrine", name="doctrine")
+     */
+    public function doctrine() {
+        $em = $this->getDoctrine()->getManager();
+
+        $faker = Faker::create();
+        $newAuthor = new Author();
+        $newAuthor->setFirstName($faker->name);
+        $newAuthor->setLastName($faker->name);
+
+        $newBook = new Book();
+        $newBook->setTitle($faker->name);
+        $newBook->setSummary($faker->text);
+        $newBook->setAuthor($newAuthor);
+        
+        $em->persist($newBook);
+        $em->flush();
+
+        
+        $final = [
+            'id' => $newBook->getId(),
+            'summary' => $newBook->getSummary(),
+            'title' => $newBook->getTitle(),
+            'coverImage' => $newBook->getCoverImage(),
+            'author' => [
+                'id' => $newAuthor->getId(),
+                'firstname' => $newAuthor->getFirstName(),
+                'lastname' => $newAuthor->getLastName(),
+            ]
+        ];
+
+        return new JsonResponse($final);
     }
 }

@@ -6,6 +6,9 @@ use GraphQL\Type\Definition\ObjectType;
 use GraphQL\Type\Definition\ResolveInfo;
 use GraphQL\Type\Definition\Type;
 
+use App\TypeRegistry;
+
+
 class AuthorType extends ObjectType
 {
     public function __construct()
@@ -22,6 +25,7 @@ class AuthorType extends ObjectType
                 ],
                 'lastName' => Type::string(),
                 'photo' => Type::string(),
+                'books' => Type::listOf(TypeRegistry::book())
                 // 'summary' => Type::string(),
             ],
         ];

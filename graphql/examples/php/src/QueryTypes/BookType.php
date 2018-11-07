@@ -15,19 +15,22 @@ class BookType extends ObjectType
         $config = [
             'name' => "Book",
             'description' => "A book",
-            'fields' => [
-                'id' => [
-                    'type' => Type::id(),
-                ],
-                'title' => [
-                    'type' => Type::string(),
-                    'description' => 'Title of the book',
-                ],
-                'releaseDate' => Type::string(),
-                'coverImage' => Type::string(),
-                'summary' => Type::string(),
-                // 'author' => TypeRegistry::author()
-            ],
+            'fields' => function() {
+                return [
+                    'id' => [
+                        'type' => Type::id(),
+                    ],
+                    'title' => [
+                        'type' => Type::string(),
+                        'description' => 'Title of the book',
+                        'defaultValue' => "50 shades of Grey"
+                    ],
+                    'releaseDate' => Type::string(),
+                    'coverImage' => Type::string(),
+                    'summary' => Type::string(),
+                    'author' => TypeRegistry::author()
+                ];
+            }
         ];
         parent::__construct($config);
     }

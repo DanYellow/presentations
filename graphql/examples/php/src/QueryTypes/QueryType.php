@@ -6,10 +6,6 @@ use GraphQL\Type\Definition\ObjectType;
 use GraphQL\Type\Definition\ResolveInfo;
 use GraphQL\Type\Definition\Type;
 
-use App\QueryTypes\BookType;
-use App\QueryTypes\AuthorType;
-use App\QueryTypes\EditorType;
-
 use App\TypeRegistry;
 
 class QueryType extends ObjectType
@@ -25,17 +21,24 @@ class QueryType extends ObjectType
             "fields" => [
                 'allBooks' => [
                     'type' => Type::listOf(TypeRegistry::book()),
-                    'description' => 'Returns stuffs',
+                    'description' => 'Returns books',
                     "args" => [
-                        "id" => Type::id(),
+                        "title" => Type::string(),
+  
                     ]
                 ],
                 'allAuthors' => [
                     'type' => Type::listOf(TypeRegistry::author()),
                     'description' => 'Returns authors',
                     "args" => [
-                        "lastName" => Type::string(),
-                        "firstName" => Type::string(),
+                        "lastName" => [
+                            'type' => Type::string(),
+                            'defaultValue' => ""
+                        ],
+                        "firstName" => [
+                            'type' => Type::string(),
+                            'defaultValue' => ""
+                        ]
                     ]
                 ],
                 'allEditors' => [
@@ -71,21 +74,52 @@ class QueryType extends ObjectType
                 'coverImage' => $val->getCoverImage()
             ]);
         }
-        return $final;
+        return [];
     }
 
-    public function allAuthors()
+    public function mapBook($book) {
+        return [
+            "title" => $book->getTitle(),
+            "summary" => $book->getSummary(),
+        ];
+    }
+
+    public function allAuthors($rootValue, $args)
     {
-        $result = $this->em->getRepository('App\Entity\Author')->findAll();
-        $final = [];
-        foreach($result as $val) {
-            array_push($final, [
+        $authors = $this->em->getRepository('App\Entity\Author')->findAll();
+
+        if($args['firstName'] !== "" || $args['lastName'] !== "") {
+            $queryParams = [
+                'lastName' => '%' . $args['lastName'] . '%',
+                // 'firstName' => $args['firstName'] . "%"
+            ];
+            if(!isset($args['firstName'])) {
+                unset($queryParams['firstName']);
+            }
+
+            if(!isset($args['lastName'])) {
+                unset($queryParams['lastName']);
+            }
+
+            $authors = $this->em->getRepository('App\Entity\Author')
+                ->createQueryBuilder('o')
+                // ->where('o.firstName = :firstname')
+                ->where('o.lastName LIKE :lastName')
+                ->setParameters($queryParams)
+                ->getQuery()
+                ->getResult();
+        }
+
+        $result = [];
+        foreach($authors as $val) {
+            array_push($result, [
                 'id' => $val->getId(),
                 'firstName' => $val->getFirstName(),
                 'lastName' => $val->getLastName(),
-                'photo' => $val->getPhoto()
+                'photo' =>$args['lastName'],
+                'books' => array_map(array($this, "mapBook"), $val->getBooks()->toArray())
             ]);
         }
-        return $final;
+        return $result;
     }
 }

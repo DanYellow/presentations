@@ -39,7 +39,7 @@ class Book implements \JsonSerializable
     private $release_date;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Author", inversedBy="books")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Author", inversedBy="books", cascade={"persist"})
      * @ORM\JoinColumn(nullable=false)
      */
     private $author;
@@ -104,7 +104,10 @@ class Book implements \JsonSerializable
     public function jsonSerialize() 
     {
         return [
-            'id' => $this->getId()
+            'id' => $this->getId(),
+            'title' => $this->getTitle(),
+            'summary' => $this->getSummary(),
+            'coverImage' => $this->getCoverImage()
         ];
     }
 

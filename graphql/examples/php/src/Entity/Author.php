@@ -39,7 +39,7 @@ class Author
     private $editors;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Book", mappedBy="author", orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity="App\Entity\Book", mappedBy="author", orphanRemoval=true, cascade={"persist"})
      */
     private $books;
 
