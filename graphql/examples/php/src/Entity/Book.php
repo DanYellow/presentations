@@ -44,6 +44,11 @@ class Book implements \JsonSerializable
      */
     private $author;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Editor", inversedBy="books")
+     */
+    private $editor;
+
     public function __construct()
     {
     }
@@ -119,6 +124,18 @@ class Book implements \JsonSerializable
     public function setAuthor(?Author $author): self
     {
         $this->author = $author;
+
+        return $this;
+    }
+
+    public function getEditor(): ?Editor
+    {
+        return $this->editor;
+    }
+
+    public function setEditor(?Editor $editor): self
+    {
+        $this->editor = $editor;
 
         return $this;
     }
