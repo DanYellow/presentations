@@ -38,6 +38,10 @@ class QueryType extends ObjectType
                         "firstName" => [
                             'type' => Type::string(),
                             'defaultValue' => ""
+                        ],
+                        "page" =>  [
+                            'type' => Type::int(),
+                            'defaultValue' => ""
                         ]
                     ]
                 ],
@@ -62,16 +66,20 @@ class QueryType extends ObjectType
         return 'Ready to go !';
     }
 
-    public function allBooks()
+    public function allBooks($rootValue, $args)
     {
         $result = $this->em->getRepository('App\Entity\Book')->findAll();
+        $page = $args['page'] || 1;
+        $itemPerPage = 5;
+        $result->setFirstResult($page * $itemPerPage)->setMaxResults($itemPerPage);
+
         $final = [];
         foreach($result as $val) {
             array_push($final, [
                 'id' => $val->getId(),
                 'summary' => $val->getSummary(),
                 'title' => $val->getTitle(),
-                'coverImage' => $val->getCoverImage()
+                'coverImage' => $val->getCoverImage(),
             ]);
         }
         return [];
@@ -79,35 +87,26 @@ class QueryType extends ObjectType
 
     public function mapBook($book) {
         return [
+            "id" => $book->getId(),
             "title" => $book->getTitle(),
             "summary" => $book->getSummary(),
+            'coverImage' => $book->getCoverImage()
         ];
     }
 
     public function allAuthors($rootValue, $args)
     {
-        $authors = $this->em->getRepository('App\Entity\Author')->findAll();
+        $page = $args['page'] ?: 1;
+        $itemPerPage = 5;
+        $dql = "SELECT a FROM App\Entity\Author a";
+        $authors = $this->em->createQuery($dql)
+                    ->setFirstResult($page * $itemPerPage)
+                    ->setMaxResults($itemPerPage)
+                    ->getResult();
 
-        if($args['firstName'] !== "" || $args['lastName'] !== "") {
-            $queryParams = [
-                'lastName' => '%' . $args['lastName'] . '%',
-                // 'firstName' => $args['firstName'] . "%"
-            ];
-            if(!isset($args['firstName'])) {
-                unset($queryParams['firstName']);
-            }
-
-            if(!isset($args['lastName'])) {
-                unset($queryParams['lastName']);
-            }
-
+        if(!empty($args['firstName']) || !empty($args['lastName'])) {
             $authors = $this->em->getRepository('App\Entity\Author')
-                ->createQueryBuilder('o')
-                // ->where('o.firstName = :firstname')
-                ->where('o.lastName LIKE :lastName')
-                ->setParameters($queryParams)
-                ->getQuery()
-                ->getResult();
+                ->findByFirstNameOrLastName($args);
         }
 
         $result = [];
@@ -116,7 +115,7 @@ class QueryType extends ObjectType
                 'id' => $val->getId(),
                 'firstName' => $val->getFirstName(),
                 'lastName' => $val->getLastName(),
-                'photo' =>$args['lastName'],
+                'photo' => $val->getPhoto(),
                 'books' => array_map(array($this, "mapBook"), $val->getBooks()->toArray())
             ]);
         }

@@ -35,7 +35,6 @@ class GraphQLController extends AbstractController
         $em = $this->getDoctrine()->getManager();
 
         try {
-
             $schema = new Schema([
                 'query' => new QueryType($em),
                 'mutation' => new MutationType($em),

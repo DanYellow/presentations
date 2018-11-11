@@ -30,9 +30,23 @@ class MutationType extends ObjectType
             "fields" => [
                 'generateBook' => [
                     'type' => TypeRegistry::book(),
-                    'description' => 'generates a random book',
+                    'description' => 'Generates a random book',
                 ],
-                "hello" => Type::string()
+                'createAuthor' => [
+                    'type' => TypeRegistry::author(),
+                    'description' => 'Creates an author',
+                    "args" => [
+                        "author" => Type::nonNull(TypeRegistry::authorInput()),
+                    ]
+                ],
+                'deleteAuthor' => [
+                    'type' => TypeRegistry::author(),
+                    'description' => 'Delete an author',
+                    "args" => [
+                        "id" => Type::nonNull(Type::id())
+                    ]
+                ],
+                'hello' => Type::string()
             ],
             'resolveField' => function($val, $args, $context, ResolveInfo $info){
                 return $this->{$info->fieldName}($val, $args, $context, $info);
@@ -74,6 +88,44 @@ class MutationType extends ObjectType
                 'lastname' => $newAuthor->getLastName(),
             ]
         ];
+
+        return $final;
+    }
+
+    public function createAuthor($rootValue, $args) {
+        $newAuthor = new Author();
+        $newAuthor->setFirstName($args['author']["firstName"]);
+        $newAuthor->setLastName($args['author']["lastName"]);
+
+        $this->em->persist($newAuthor);
+        $this->em->flush();
+
+        $final = [
+            'id' => $newAuthor->getId(),
+            'firstName' => $newAuthor->getFirstName(),
+            'lastName' => $newAuthor->getLastName(),
+        ];
+
+        return $final;
+    }
+
+    public function deleteAuthor($rootValue, $args) {
+
+        $author = $this->em->getRepository('App\Entity\Author')->findOneBy(['id' => $args['id']]);
+        if(!$author) {
+            return [
+                "firstName" => "Not found"
+            ];
+        }
+
+        $final = [
+            'id' => $author->getId(),
+            'firstName' => $author->getFirstName(),
+            'lastName' => $author->getLastName(),
+        ];
+
+        $this->em->remove($author);
+        $this->em->flush();
 
         return $final;
     }

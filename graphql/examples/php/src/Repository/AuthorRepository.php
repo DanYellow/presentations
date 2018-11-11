@@ -19,6 +19,39 @@ class AuthorRepository extends ServiceEntityRepository
         parent::__construct($registry, Author::class);
     }
 
+    public function findByFirstNameOrLastName($params = [])
+    {
+        $em = $this->getEntityManager();
+        $queryParams = [
+            'lastName' => '%' . $params['lastName'] . '%',
+            'firstName' => '%' . $params['firstName'] . "%"
+        ];
+
+        $dql = 'SELECT a FROM App\Entity\Author a WHERE';
+
+        if(empty($params['firstName']))
+        {
+            unset($queryParams['firstName']);
+        } else {
+            $dql .= ' a.firstName LIKE :firstName';
+        }
+
+        if(!empty($params['firstName']) && !empty($params['lastName'])) {
+            $dql .= ' AND';
+        }
+
+        if(empty($params['lastName'])) {
+            unset($queryParams['lastName']);
+        } else {
+            $dql .= ' a.lastName LIKE :lastName';
+        }
+
+        $query = $em->createQuery($dql);
+        $query->setParameters($queryParams);
+
+        return $query->getResult();
+    }
+
 //    /**
 //     * @return Author[] Returns an array of Author objects
 //     */
