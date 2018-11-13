@@ -26,10 +26,13 @@ class EditorType extends ObjectType
                     'type' => Type::string(),
                     'description' => 'Editor\'s name',
                 ],
-                // 'books' => Type::listOf(new Book()),
-                // 'authors' => Type::listOf(new Author()),
+                'books' => Type::listOf(TypeRegistry::book()),
+                'authors' => Type::listOf(TypeRegistry::author()),
                 'creationDate' => Type::string(),
-                'photo' => Type::string(),
+                'photo' => [
+                    'type' => Type::string(),
+                    'defaultValue' => '',
+                ]
             ],
         ];
         parent::__construct($config);

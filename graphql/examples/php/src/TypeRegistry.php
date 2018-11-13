@@ -8,6 +8,7 @@ use App\QueryTypes\EditorType;
 
 use App\MutationTypes\AuthorInput;
 use App\MutationTypes\BookInput;
+use App\MutationTypes\EditorInput;
 
 
 
@@ -19,7 +20,7 @@ class TypeRegistry
 
     private static $bookInput;
     private static $authorInput;
-    // private static $editorInput;
+    private static $editorInput;
 
     public static function book()
     {
@@ -44,7 +45,11 @@ class TypeRegistry
 
     public static function editor()
     {
-        // return $this->editor ?: ($this->editor = new EditorType($this));
         return self::$editor ?: (self::$editor = new EditorType());
+    }
+
+    public static function editorInput()
+    {
+        return self::$editorInput ?: (self::$editorInput = new EditorInput());
     }
 }
