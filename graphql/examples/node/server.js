@@ -7,11 +7,13 @@ const PORT = 4000;
 
 const app = express();
 app.use(
-  '/graphql',
+  '/__graphql',
   graphqlHTTP({
     schema,
     graphiql: true,
   })
 );
 
-app.listen(PORT, () => console.log('Now browse to localhost:%s/graphql', PORT));
+app.listen(PORT, () =>
+  console.log('Now browse to localhost:%s/__graphql', PORT)
+);
