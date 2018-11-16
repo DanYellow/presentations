@@ -28,7 +28,7 @@ use App\TypeRegistry;
 class GraphQLController extends AbstractController
 {
     /**
-     * @Route("/graphql", name="graphql")
+     * @Route("/__graphql", name="graphql")
      */
     public function graphql()
     {
@@ -67,37 +67,31 @@ class GraphQLController extends AbstractController
     }
 
     /**
-     * @Route("/doctrine", name="doctrine")
+     * @Route("/__doctrine", name="doctrine")
      */
     public function doctrine() {
         $em = $this->getDoctrine()->getManager();
 
         $faker = Faker::create();
-        $newAuthor = new Author();
-        $newAuthor->setFirstName($faker->name);
-        $newAuthor->setLastName($faker->name);
+        $date = new \DateTime();
 
-        $newBook = new Book();
-        $newBook->setTitle($faker->name);
-        $newBook->setSummary($faker->text);
-        $newBook->setAuthor($newAuthor);
-        
-        $em->persist($newBook);
+        $newEditor = new Editor();
+        $newEditor->setName($faker->name);
+        $newEditor->setPhoto($faker->name);
+        $newEditor->setCreationDate($date);
+
+        $em->persist($newEditor);
         $em->flush();
 
-        
-        $final = [
-            'id' => $newBook->getId(),
-            'summary' => $newBook->getSummary(),
-            'title' => $newBook->getTitle(),
-            'coverImage' => $newBook->getCoverImage(),
-            'author' => [
-                'id' => $newAuthor->getId(),
-                'firstname' => $newAuthor->getFirstName(),
-                'lastname' => $newAuthor->getLastName(),
-            ]
+        $strDate = $date->format('Y-m-d');
+
+        $response = [
+            'id' => $newEditor->getId(),
+            'name' => $newEditor->getName(),
+            'photo' => $newEditor->getPhoto(),
+            'creationDate' => '$strDate',
         ];
 
-        return new JsonResponse($final);
+        return new JsonResponse($response);
     }
 }
