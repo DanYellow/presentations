@@ -24,7 +24,10 @@ class QueryType extends ObjectType
                     'description' => 'Returns books',
                     "args" => [
                         "title" => Type::string(),
-  
+                        "page" =>  [
+                            'type' => Type::int(),
+                            'defaultValue' => ""
+                        ]
                     ]
                 ],
                 'allAuthors' => [
@@ -68,13 +71,16 @@ class QueryType extends ObjectType
 
     public function allBooks($rootValue, $args)
     {
-        $result = $this->em->getRepository('App\Entity\Book')->findAll();
-        $page = $args['page'] || 1;
+        $page = $args['page'] ?: 1;
         $itemPerPage = 5;
-        $result->setFirstResult($page * $itemPerPage)->setMaxResults($itemPerPage);
+        $dql = "SELECT b FROM App\Entity\Book b";
+        $books = $this->em->createQuery($dql)
+                    ->setFirstResult($page * $itemPerPage)
+                    ->setMaxResults($itemPerPage)
+                    ->getResult();
 
         $final = [];
-        foreach($result as $val) {
+        foreach($books as $val) {
             array_push($final, [
                 'id' => $val->getId(),
                 'summary' => $val->getSummary(),
@@ -82,7 +88,7 @@ class QueryType extends ObjectType
                 'coverImage' => $val->getCoverImage(),
             ]);
         }
-        return [];
+        return $final;
     }
 
     public function mapBook($book) {
