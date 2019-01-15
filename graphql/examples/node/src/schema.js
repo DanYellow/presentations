@@ -92,7 +92,7 @@ const typeDefs = `
         editors:[Editor]
         editor(id: ID):Editor
         
-        authors:[Author]
+        authors(page: Int):[Author]
         author(id: ID): Author
     }
 `;

@@ -19,11 +19,15 @@ module.exports = {
 
       return author;
     },
-    authors: async () => {
+    authors: async (_, { page = 1 }) => {
+      const nbItemsPerPage = 5;
+      page = page - 1;
       const [err, authors] = await Utils.to(
         Author.findAll(
           {
             include: [Book, Editor],
+            offset: page * nbItemsPerPage,
+            limit: nbItemsPerPage,
           },
           { raw: true }
         )
@@ -32,6 +36,7 @@ module.exports = {
       return authors;
     },
   },
+
   Mutation: {
     createAuthor: async (_, { books = [], author }) => {
       const [err, newAuthor] = await Utils.to(
@@ -47,7 +52,7 @@ module.exports = {
       );
 
       books.forEach(async book => {
-        const [errEditor, newEditor] = await Utils.to(
+        const [_, newEditor] = await Utils.to(
           Editor.create(
             {
               ...book.editor,
@@ -58,9 +63,8 @@ module.exports = {
             }
           )
         );
-        // if (!errEditor) {
+
         await newAuthor.addEditor(newEditor);
-        // }
       });
 
       if (err) return false;
