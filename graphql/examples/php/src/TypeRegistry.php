@@ -10,8 +10,6 @@ use App\MutationTypes\AuthorInput;
 use App\MutationTypes\BookInput;
 use App\MutationTypes\EditorInput;
 
-
-
 class TypeRegistry
 {
     private static $book;
@@ -24,7 +22,6 @@ class TypeRegistry
 
     public static function book()
     {
-        // return $this->book ?: ($this->book = new BookType($this));
         return self::$book ?: (self::$book = new BookType());
     }
 

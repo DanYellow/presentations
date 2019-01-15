@@ -23,7 +23,7 @@ class BookType extends ObjectType
                     'title' => [
                         'type' => Type::string(),
                         'description' => 'Title of the book',
-                        'defaultValue' => "50 shades of Grey"
+                        'defaultValue' => "Catch 22"
                     ],
                     'releaseDate' => Type::string(),
                     'coverImage' => Type::string(),
