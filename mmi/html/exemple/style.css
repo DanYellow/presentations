@@ -1,0 +1,10 @@
+.text-pistil {
+  color: pink;
+  opacity: 0.5;
+  font-weight: bold;
+}
+
+.attention {
+  color: red;
+  text-decoration: underline;
+}
