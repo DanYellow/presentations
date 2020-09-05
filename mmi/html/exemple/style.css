@@ -1,10 +1,23 @@
 .text-pistil {
-  color: pink;
-  opacity: 0.5;
+  color: inherit;
+}
+
+.description {
+  color: blue;
+  font-size: 16px;
   font-weight: bold;
 }
 
 .attention {
   color: red;
   text-decoration: underline;
+}
+
+article section div.imbrication .element div p.description .text-pistil {
+  text-decoration: underline;
+  font-size: 25px;
+}
+
+.testé {
+  color: orange;
 }
