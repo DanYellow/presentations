@@ -1,5 +1,6 @@
 .text-pistil {
   color: inherit;
+  width: 140px;
 }
 
 .description {
@@ -13,11 +14,11 @@
   text-decoration: underline;
 }
 
+/* 
+* Mauvaise pratique
+* 
+*/
 article section div.imbrication .element div p.description .text-pistil {
   text-decoration: underline;
   font-size: 25px;
-}
-
-.testé {
-  color: orange;
 }
