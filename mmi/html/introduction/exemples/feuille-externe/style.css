@@ -1,6 +1,5 @@
 .text-pistil {
-  color: inherit;
-  width: 140px;
+  color: pink;
 }
 
 .description {
@@ -18,7 +17,7 @@
 * Mauvaise pratique
 * 
 */
-article section div.imbrication .element div p.description .text-pistil {
+article section div.imbrication .element p.description .text-pistil {
   text-decoration: underline;
   font-size: 25px;
 }
