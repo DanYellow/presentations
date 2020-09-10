@@ -16,56 +16,202 @@
         <li>index.html</li>
         <li>mon-image.jpg</li>
       </ul>
+
+      <p>Réponses possibles (un choix possible) :</p>
+      <div class="list-responses">
+        <div>
+          <input
+            type="radio"
+            id="ex1-mon-image-png"
+            name="ex1"
+            value="ex1-mon-image-png"
+          />
+          <label for="ex1-mon-image-png">./mon-image.png</label>
+        </div>
+
+        <div>
+          <input
+            type="radio"
+            id="ex1-parent-mon-image-jpg"
+            name="ex1"
+            value="ex1-parent-mon-image-jpg"
+          />
+          <label for="ex1-parent-mon-image-jpg">../mon-image.jpg</label>
+        </div>
+
+        <div>
+          <input
+            type="radio"
+            id="ex1-mon-image-jpg"
+            name="ex1"
+            value="ex1-mon-image-jpg"
+          />
+          <label for="ex1-mon-image-jpg">./mon-image.jpg</label>
+        </div>
+
+        <div>
+          <input
+            type="radio"
+            id="ex1-pc-mon-image-jpg"
+            name="ex1"
+            value="ex1-pc-mon-image-jpg"
+          />
+          <label for="ex1-pc-mon-image-jpg">../PC/mon-image.jpg</label>
+        </div>
+      </div>
     </article>
 
     <article class="exercice">
       <ul class="tree">
         <li>
-          mon-site/
+          /
           <ul>
-            <li class="is-index-file">index.html</li>
-            <li class="is-image-file">mon-image.jpg</li>
+            <li>
+              mon-site/
+              <ul>
+                <li class="is-index-file">index.html</li>
+                <li class="is-image-file">mon-image.jpg</li>
+              </ul>
+            </li>
           </ul>
         </li>
         <li>mon-fichier.pdf</li>
       </ul>
+
+      <p>Réponses possibles (un choix possible) :</p>
+      <div class="list-responses">
+        <div>
+          <input
+            type="radio"
+            id="ex2-mon-image-jpg"
+            name="ex2"
+            value="ex2-mon-image-jpg"
+          />
+          <label for="ex2-mon-image-jpg">./mon-image.jpg</label>
+        </div>
+
+        <div>
+          <input
+            type="radio"
+            id="ex2-mon-image-png"
+            name="ex2"
+            value="ex2-mon-image-png"
+          />
+          <label for="ex2-mon-image-png">mon-site/mon-image.png</label>
+        </div>
+
+        <div>
+          <input
+            type="radio"
+            id="ex2-parent-mon-image-jpg"
+            name="ex2"
+            value="ex2-parent-mon-image-jpg"
+          />
+          <label for="ex2-parent-mon-image-jpg"
+            >../mon-site/mon-image.jpg</label
+          >
+        </div>
+
+        <div>
+          <input
+            type="radio"
+            id="ex2-pc-mon-image-jpg"
+            name="ex2"
+            value="ex2-pc-mon-image-jpg"
+          />
+          <label for="ex2-pc-mon-image-jpg">../PC/mon-image.jpg</label>
+        </div>
+      </div>
     </article>
 
     <article class="exercice">
       <ul class="tree">
         <li>
-          mon-html/
+          /
           <ul>
-            <li class="is-index-file">index.html</li>
-          </ul>
-        </li>
-        <li>
-          mes-images/
-          <ul>
-            <li class="is-image-file">mon-image.jpg</li>
-          </ul>
-        </li>
-      </ul>
-    </article>
-
-    <article class="exercice">
-      <ul class="tree">
-        <li>
-          mon-html/
-          <ul>
-            <li class="is-index-file">index.html</li>
-          </ul>
-        </li>
-        <li>
-          assets/
-          <ul>
+            <li>
+              mon-html/
+              <ul>
+                <li class="is-index-file">index.html</li>
+              </ul>
+            </li>
             <li>
               mes-images/
               <ul>
+                <li class="is-image-file">mon-image.jpg</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+
+      <p>Réponses possibles (un choix possible) :</p>
+      <div class="list-responses">
+        <div>
+          <input
+            type="radio"
+            id="ex3-mon-image-png"
+            name="ex3"
+            value="ex3-mon-image-png"
+          />
+          <label for="ex3-mon-image-png">./mon-image.png</label>
+        </div>
+
+        <div>
+          <input
+            type="radio"
+            id="ex3-parent-mon-image-jpg"
+            name="ex3"
+            value="ex3-parent-mon-image-jpg"
+          />
+          <label for="ex3-parent-mon-image-jpg">../mon-image.jpg</label>
+        </div>
+
+        <div>
+          <input
+            type="radio"
+            id="ex3-mon-image-jpg"
+            name="ex3"
+            value="ex3-mon-image-jpg"
+          />
+          <label for="ex3-mon-image-jpg">./mon-image.jpg</label>
+        </div>
+
+        <div>
+          <input
+            type="radio"
+            id="ex3-pc-mon-image-jpg"
+            name="ex3"
+            value="ex3-pc-mon-image-jpg"
+          />
+          <label for="ex3-pc-mon-image-jpg">../mes-images/mon-image.jpg</label>
+        </div>
+      </div>
+    </article>
+
+    <article class="exercice">
+      <ul class="tree">
+        <li>
+          /
+          <ul>
+            <li>
+              mon-html/
+              <ul>
+                <li class="is-index-file">index.html</li>
+              </ul>
+            </li>
+            <li>
+              assets/
+              <ul>
                 <li>
-                  mes-jpgs/
+                  mes-images/
                   <ul>
-                    <li class="is-image-file">mon-image.jpg</li>
+                    <li>
+                      mes-jpgs/
+                      <ul>
+                        <li class="is-image-file">mon-image.jpg</li>
+                      </ul>
+                    </li>
                   </ul>
                 </li>
               </ul>
@@ -78,21 +224,31 @@
     <article class="exercice">
       <ul class="tree">
         <li>
-          mes-jpgs/
-          <ul>
-            <li class="is-image-file">mon-image.jpg</li>
-          </ul>
-        </li>
-        <li>
-          site/
+          /
           <ul>
             <li>
-              mmi/
+              mes-images /
               <ul>
                 <li>
-                  html/
+                  mes-jpgs/
                   <ul>
-                    <li class="is-index-file">index.html</li>
+                    <li class="is-image-file">mon-image.jpg</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>
+              site/
+              <ul>
+                <li>
+                  mmi/
+                  <ul>
+                    <li>
+                      html/
+                      <ul>
+                        <li class="is-index-file">index.html</li>
+                      </ul>
+                    </li>
                   </ul>
                 </li>
               </ul>

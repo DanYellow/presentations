@@ -60,3 +60,18 @@ body {
   background: rgb(49 193 2);
   color: white;
 }
+
+.list-responses {
+  margin-top: 0;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.exercice p {
+  margin-top: 25px;
+  margin-bottom: 5px;
+}
+
+.list-responses > div {
+  display: inline-block;
+}
