@@ -1,0 +1,62 @@
+* {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  max-width: 1280px;
+  margin: 0 auto;
+  min-height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}
+
+body {
+  background: rgb(2, 173, 193);
+  background: linear-gradient(
+    0deg,
+    rgba(2, 173, 193, 1) 0%,
+    rgba(0, 212, 255, 1) 100%
+  );
+}
+
+.exercice {
+  max-width: 980px;
+  margin: 30px auto;
+  border: 2px solid #028695;
+  border-radius: 4px;
+  padding: 25px;
+  background-color: aliceblue;
+}
+
+.instruction {
+  margin: 55px auto;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.tree {
+  position: relative;
+}
+
+.tree li {
+  font-size: 1.2rem;
+  position: relative;
+  padding: 0 7px;
+  margin: 2px 0;
+}
+
+.tree ul {
+  margin-left: 15px;
+}
+
+.tree .is-index-file {
+  background: rgb(2, 173, 193);
+  color: white;
+}
+
+.tree .is-image-file {
+  background: rgb(49 193 2);
+  color: white;
+}

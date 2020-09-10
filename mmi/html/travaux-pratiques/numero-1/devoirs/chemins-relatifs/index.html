@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section class="instruction">
+      <h1>Sélectionnez le bon chemin relatif</h1>
+    </section>
+    <article class="exercice">
+      <ul class="tree">
+        <li>index.html</li>
+        <li>mon-image.jpg</li>
+      </ul>
+    </article>
+
+    <article class="exercice">
+      <ul class="tree">
+        <li>
+          mon-site/
+          <ul>
+            <li class="is-index-file">index.html</li>
+            <li class="is-image-file">mon-image.jpg</li>
+          </ul>
+        </li>
+        <li>mon-fichier.pdf</li>
+      </ul>
+    </article>
+
+    <article class="exercice">
+      <ul class="tree">
+        <li>
+          mon-html/
+          <ul>
+            <li class="is-index-file">index.html</li>
+          </ul>
+        </li>
+        <li>
+          mes-images/
+          <ul>
+            <li class="is-image-file">mon-image.jpg</li>
+          </ul>
+        </li>
+      </ul>
+    </article>
+
+    <article class="exercice">
+      <ul class="tree">
+        <li>
+          mon-html/
+          <ul>
+            <li class="is-index-file">index.html</li>
+          </ul>
+        </li>
+        <li>
+          assets/
+          <ul>
+            <li>
+              mes-images/
+              <ul>
+                <li>
+                  mes-jpgs/
+                  <ul>
+                    <li class="is-image-file">mon-image.jpg</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </article>
+
+    <article class="exercice">
+      <ul class="tree">
+        <li>
+          mes-jpgs/
+          <ul>
+            <li class="is-image-file">mon-image.jpg</li>
+          </ul>
+        </li>
+        <li>
+          site/
+          <ul>
+            <li>
+              mmi/
+              <ul>
+                <li>
+                  html/
+                  <ul>
+                    <li class="is-index-file">index.html</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </article>
+  </body>
+</html>
