@@ -18,10 +18,12 @@ body {
     rgba(2, 173, 193, 1) 0%,
     rgba(0, 212, 255, 1) 100%
   );
+  position: relative;
+  padding-bottom: 60px;
 }
 
 .exercice {
-  max-width: 980px;
+  max-width: 1180px;
   margin: 30px auto;
   border: 2px solid #028695;
   border-radius: 4px;
@@ -74,4 +76,41 @@ body {
 
 .list-responses > div {
   display: inline-block;
+}
+
+.list-responses input[data-is-answer="y"]:checked ~ label {
+  background-color: #7ee684;
+}
+
+.list-responses input[data-is-answer="n"]:checked ~ label {
+  background-color: #e67e87;
+}
+
+.total-responses {
+  display: inline-block;
+  padding: 20px 35px;
+  position: fixed;
+  bottom: 0;
+  transform: translateX(-50%);
+  left: 50%;
+  font-size: 3rem;
+  text-align: center;
+}
+
+.total-responses p {
+  font-size: 0.9rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .list-responses {
+    flex-direction: column;
+  }
+
+  .list-responses > div {
+    margin-bottom: 15px;
+  }
+
+  body {
+    padding-bottom: 80px;
+  }
 }

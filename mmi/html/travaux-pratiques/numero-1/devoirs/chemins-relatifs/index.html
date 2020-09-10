@@ -13,8 +13,13 @@
     </section>
     <article class="exercice">
       <ul class="tree">
-        <li>index.html</li>
-        <li>mon-image.jpg</li>
+        <li>
+          /
+          <ul>
+            <li class="is-index-file">index.html</li>
+            <li class="is-image-file">mon-image.jpg</li>
+          </ul>
+        </li>
       </ul>
 
       <p>Réponses possibles (un choix possible) :</p>
@@ -25,6 +30,7 @@
             id="ex1-mon-image-png"
             name="ex1"
             value="ex1-mon-image-png"
+            data-is-answer="n"
           />
           <label for="ex1-mon-image-png">./mon-image.png</label>
         </div>
@@ -35,6 +41,7 @@
             id="ex1-parent-mon-image-jpg"
             name="ex1"
             value="ex1-parent-mon-image-jpg"
+            data-is-answer="n"
           />
           <label for="ex1-parent-mon-image-jpg">../mon-image.jpg</label>
         </div>
@@ -45,6 +52,7 @@
             id="ex1-mon-image-jpg"
             name="ex1"
             value="ex1-mon-image-jpg"
+            data-is-answer="y"
           />
           <label for="ex1-mon-image-jpg">./mon-image.jpg</label>
         </div>
@@ -55,6 +63,7 @@
             id="ex1-pc-mon-image-jpg"
             name="ex1"
             value="ex1-pc-mon-image-jpg"
+            data-is-answer="n"
           />
           <label for="ex1-pc-mon-image-jpg">../PC/mon-image.jpg</label>
         </div>
@@ -86,6 +95,7 @@
             id="ex2-mon-image-jpg"
             name="ex2"
             value="ex2-mon-image-jpg"
+            data-is-answer="y"
           />
           <label for="ex2-mon-image-jpg">./mon-image.jpg</label>
         </div>
@@ -96,6 +106,7 @@
             id="ex2-mon-image-png"
             name="ex2"
             value="ex2-mon-image-png"
+            data-is-answer="n"
           />
           <label for="ex2-mon-image-png">mon-site/mon-image.png</label>
         </div>
@@ -106,6 +117,7 @@
             id="ex2-parent-mon-image-jpg"
             name="ex2"
             value="ex2-parent-mon-image-jpg"
+            data-is-answer="n"
           />
           <label for="ex2-parent-mon-image-jpg"
             >../mon-site/mon-image.jpg</label
@@ -118,6 +130,7 @@
             id="ex2-pc-mon-image-jpg"
             name="ex2"
             value="ex2-pc-mon-image-jpg"
+            data-is-answer="n"
           />
           <label for="ex2-pc-mon-image-jpg">../PC/mon-image.jpg</label>
         </div>
@@ -153,6 +166,7 @@
             id="ex3-mon-image-png"
             name="ex3"
             value="ex3-mon-image-png"
+            data-is-answer="n"
           />
           <label for="ex3-mon-image-png">./mon-image.png</label>
         </div>
@@ -163,6 +177,7 @@
             id="ex3-parent-mon-image-jpg"
             name="ex3"
             value="ex3-parent-mon-image-jpg"
+            data-is-answer="n"
           />
           <label for="ex3-parent-mon-image-jpg">../mon-image.jpg</label>
         </div>
@@ -173,6 +188,7 @@
             id="ex3-mon-image-jpg"
             name="ex3"
             value="ex3-mon-image-jpg"
+            data-is-answer="n"
           />
           <label for="ex3-mon-image-jpg">./mon-image.jpg</label>
         </div>
@@ -183,6 +199,7 @@
             id="ex3-pc-mon-image-jpg"
             name="ex3"
             value="ex3-pc-mon-image-jpg"
+            data-is-answer="y"
           />
           <label for="ex3-pc-mon-image-jpg">../mes-images/mon-image.jpg</label>
         </div>
@@ -219,6 +236,57 @@
           </ul>
         </li>
       </ul>
+
+      <p>Réponses possibles (un choix possible) :</p>
+      <div class="list-responses">
+        <div>
+          <input
+            type="radio"
+            id="ex4-mon-image-png"
+            name="ex4"
+            value="ex4-mon-image-png"
+            data-is-answer="n"
+          />
+          <label for="ex4-mon-image-png">./mon-image.jpg</label>
+        </div>
+
+        <div>
+          <input
+            type="radio"
+            id="ex4-parent-mon-image-jpg"
+            name="ex4"
+            value="ex4-parent-mon-image-jpg"
+            data-is-answer="n"
+          />
+          <label for="ex4-parent-mon-image-jpg"
+            >../../mon-html/mon-image.jpg</label
+          >
+        </div>
+
+        <div>
+          <input
+            type="radio"
+            id="ex4-mon-image-jpg"
+            name="ex4"
+            value="ex4-mon-image-jpg"
+            data-is-answer="y"
+          />
+          <label for="ex4-mon-image-jpg"
+            >../assets/mes-images/mes-jpgs/mon-image.jpg</label
+          >
+        </div>
+
+        <div>
+          <input
+            type="radio"
+            id="ex4-pc-mon-image-jpg"
+            name="ex4"
+            value="ex4-pc-mon-image-jpg"
+            data-is-answer="n"
+          />
+          <label for="ex4-pc-mon-image-jpg">../mes-images/mon-image.jpg</label>
+        </div>
+      </div>
     </article>
 
     <article class="exercice">
@@ -256,6 +324,79 @@
           </ul>
         </li>
       </ul>
+
+      <p>Réponses possibles (un choix possible) :</p>
+      <div class="list-responses">
+        <div>
+          <input
+            type="radio"
+            id="ex5-mon-image-png"
+            name="ex5"
+            value="ex5-mon-image-png"
+            data-is-answer="n"
+          />
+          <label for="ex5-mon-image-png">./mon-image.jpg</label>
+        </div>
+
+        <div>
+          <input
+            type="radio"
+            id="ex5-parent-mon-image-jpg"
+            name="ex5"
+            value="ex5-parent-mon-image-jpg"
+            data-is-answer="n"
+          />
+          <label for="ex5-parent-mon-image-jpg"
+            >../../mon-html/mon-image.jpg</label
+          >
+        </div>
+
+        <div>
+          <input
+            type="radio"
+            id="ex5-mon-image-jpg"
+            name="ex5"
+            value="ex5-mon-image-jpg"
+            data-is-answer="n"
+          />
+          <label for="ex5-mon-image-jpg"
+            >../assets/mes-images/mes-jpgs/mon-image.jpg</label
+          >
+        </div>
+
+        <div>
+          <input
+            type="radio"
+            id="ex5-pc-mon-image-jpg"
+            name="ex5"
+            value="ex5-pc-mon-image-jpg"
+            data-is-answer="y"
+          />
+          <label for="ex5-pc-mon-image-jpg"
+            >../../../mes-images/mes-jpgs/mon-image.jpg</label
+          >
+        </div>
+      </div>
     </article>
+
+    <div id="total-responses" class="total-responses">
+      <p>Nombre de bonnes réponses</p>
+      <span>0</span>
+    </div>
+
+    <script>
+      const totalResponseTxt = document.querySelector("#total-responses span");
+      document.querySelectorAll("input[data-is-answer]").forEach((item) => {
+        item.addEventListener("change", () => {
+          console.log(
+            document.querySelectorAll("input[data-is-answer='y']:checked")
+              .length
+          );
+          totalResponseTxt.textContent = document.querySelectorAll(
+            "input[data-is-answer='y']:checked"
+          ).length;
+        });
+      });
+    </script>
   </body>
 </html>
