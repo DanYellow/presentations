@@ -32,10 +32,25 @@ body {
 }
 
 .instruction {
+  max-width: 1180px;
   margin: 55px auto;
-  font-size: 2rem;
+}
+
+.instruction h1 {
+  font-size: 1.7rem;
   font-weight: bold;
+  margin-bottom: 5px;
   text-align: center;
+}
+
+.instruction p {
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+}
+
+.instruction ul {
+  font-size: 1.1rem;
+  list-style: square inside;
 }
 
 .tree {
@@ -45,7 +60,7 @@ body {
 .tree li {
   font-size: 1.2rem;
   position: relative;
-  padding: 0 7px;
+  padding-left: 7px;
   margin: 2px 0;
 }
 
@@ -53,20 +68,21 @@ body {
   margin-left: 15px;
 }
 
-.tree .is-index-file {
-  background: rgb(2, 173, 193);
+.is-index-file {
+  background: #025f69;
   color: white;
 }
 
-.tree .is-image-file {
-  background: rgb(49 193 2);
+.is-image-file {
+  background: #1b6402;
   color: white;
 }
 
 .list-responses {
   margin-top: 0;
-  display: flex;
-  justify-content: space-evenly;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
 }
 
 .exercice p {
@@ -111,6 +127,6 @@ body {
   }
 
   body {
-    padding-bottom: 80px;
+    padding: 0 20px 80px;
   }
 }
