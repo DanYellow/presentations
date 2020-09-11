@@ -119,7 +119,8 @@ body {
 
 @media only screen and (max-width: 768px) {
   .list-responses {
-    flex-direction: column;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 20px;
   }
 
   .list-responses > div {
