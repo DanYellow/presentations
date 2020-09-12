@@ -1,8 +1,4 @@
-* {
-  box-sizing: border-box;
-}
-
-.texte-gris {
+.informations {
   color: rgb(230, 230, 230);
   font-weight: bold;
 }
