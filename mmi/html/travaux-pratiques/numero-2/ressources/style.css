@@ -1,0 +1,8 @@
+* {
+  box-sizing: border-box;
+}
+
+.texte-gris {
+  color: rgb(230, 230, 230);
+  font-weight: bold;
+}
