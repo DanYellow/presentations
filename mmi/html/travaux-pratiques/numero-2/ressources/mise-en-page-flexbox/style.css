@@ -26,12 +26,13 @@ nav {
 
 .image-complementaire {
   margin: 0;
+  height: 125px;
 }
 
 .image-complementaire img {
   object-fit: cover;
   width: 100%;
-  height: 100px;
+  height: 100%;
 }
 
 .cursus {
