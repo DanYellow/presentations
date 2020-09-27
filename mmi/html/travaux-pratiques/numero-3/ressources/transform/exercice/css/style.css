@@ -148,7 +148,11 @@ h1 {
 .element-conteneur.transition-3 figcaption::after {
   content: "";
   display: block;
-  background-color: rgba(0, 0, 0, 0.5);
+  background: linear-gradient(
+    to bottom,
+    rgba(72, 76, 97, 0) 0%,
+    rgba(72, 76, 97, 0.8) 75%
+  );
   position: absolute;
   top: 0;
   left: 0;
