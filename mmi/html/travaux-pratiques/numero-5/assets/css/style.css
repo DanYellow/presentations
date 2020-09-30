@@ -14,14 +14,31 @@ body {
   background-color: #62b7bc;
   overflow: auto;
   white-space: nowrap;
+  position: relative;
+}
+
+.navigation::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -9999px;
+  right: 0;
+  border-left: 9999px solid black;
+  box-shadow: 9999px 0 0 black;
 }
 
 .navigation ul li {
   display: inline-block;
-  padding: 15px 30px;
   border-right: 1px solid #5d5d5d;
 }
 
 .navigation ul li a {
   color: #1f1f1f;
+  display: block;
+  padding: 15px 30px;
+}
+
+.navigation ul li a:hover {
+  color: aliceblue;
 }
