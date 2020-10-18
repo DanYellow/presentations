@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ressource - Media queries</title>
+    <link rel="stylesheet" href="assets/css/normalize.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <h1 class="title">TP sur les media queries</h1>
+    <p>
+      La spécification de niveau 4 pour les requêtes média ajoute des
+      améliorations syntaxiques pour les requêtes média qui portent sur un
+      intervalle (par exemple les critères de largeur et de hauteur).
+    </p>
+
+    <ul class="liste-images">
+      <li>
+        <img
+          srcset="
+            assets/images/panorama-640.png  1x,
+            assets/images/panorama-640.png  2x,
+            assets/images/panorama-1024.png 3x
+          "
+          src="assets/images/panorama-default.png"
+          alt="Image d'un panorama de Gaspésie"
+          class="img-responsive"
+        />
+      </li>
+      <li>
+        <img
+          src="assets/images/muffins.jpg"
+          class="img-responsive"
+          alt="Muffins chocolat-banane"
+        />
+      </li>
+    </ul>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+body {
+  font-size: 16px;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+ul {
+  list-style: none;
+}
+
+.img-responsive {
+  max-width: 100%;
+  height: auto;
+}
+
+.liste-images {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.liste-images li {
+  flex: 1;
+}
+
+@media only screen and (max-width: 320px) {
+}
+
+@media only screen and (orientation: landscape) {
+}
