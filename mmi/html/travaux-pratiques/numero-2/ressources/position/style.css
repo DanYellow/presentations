@@ -22,8 +22,7 @@
 
 .position-sticky {
   position: sticky;
-  top: 0;
-  left: 0;
+  top: auto;
 }
 
 .example-box {
