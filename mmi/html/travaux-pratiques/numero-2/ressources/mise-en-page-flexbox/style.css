@@ -1,28 +1,24 @@
-/* reset */
 body,
 html {
-  margin: 0 auto;
-  padding: 0;
-  ;
+  font-family: Helvetica, Arial, sans-serif;
 }
-
-ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-/* reset */
 
 html {
   background-color: #eeeeee;
 }
 
 body {
-  max-width: 1100px;
+  max-width: 1100px; /* Notre site ne peut pas avoir une largeur supérieure à 1100px */
+  margin: 0 auto;
 }
 
-nav {
+.navigation-principale {
   background-color: #62b7bc;
+}
+
+.navigation-principale a {
+  color: black;
+  display: bl;
 }
 
 .image-complementaire {
@@ -36,10 +32,6 @@ nav {
   height: 100%;
 }
 
-.cursus {
-  background-color: #ffffff;
-}
-
 .description {
   background-color: #ffffff;
 }
@@ -48,24 +40,33 @@ nav {
   margin-bottom: 32px;
 }
 
-.cursus li {
+.liste-cursus {
+  background-color: #ffffff;
+}
+
+.liste-cursus ul {
+  display: flex;
+  flex-direction: column;
+}
+
+.liste-cursus li {
   border: solid 2px;
   padding: 15px 0;
   text-align: center;
 }
 
-.cursus li:nth-child(3n + 4) {
+.liste-cursus li:nth-child(3n + 4) {
   border-color: #cd3a68;
 }
 
-.cursus li:nth-child(3n + 3) {
+.liste-cursus li:nth-child(3n + 3) {
   border-color: #4d72d6;
 }
 
-.cursus li:nth-child(3n + 2) {
+.liste-cursus li:nth-child(3n + 2) {
   border-color: #c582dd;
 }
 
-.cursus li:nth-child(3n + 1) {
+.liste-cursus li:nth-child(3n + 1) {
   border-color: #5abc7b;
 }
