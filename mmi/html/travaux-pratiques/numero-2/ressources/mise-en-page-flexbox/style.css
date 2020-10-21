@@ -18,7 +18,7 @@ body {
 
 .navigation-principale a {
   color: black;
-  display: bl;
+  display: block;
 }
 
 .image-complementaire {
@@ -34,6 +34,7 @@ body {
 
 .description {
   background-color: #ffffff;
+  padding: 28px 25px;
 }
 
 .description p {
@@ -42,11 +43,6 @@ body {
 
 .liste-cursus {
   background-color: #ffffff;
-}
-
-.liste-cursus ul {
-  display: flex;
-  flex-direction: column;
 }
 
 .liste-cursus li {
