@@ -7,6 +7,8 @@ yarn-error.log*
 
 .~lock*
 
+.DS_Store
+
 # Runtime data
 pids
 *.pid
