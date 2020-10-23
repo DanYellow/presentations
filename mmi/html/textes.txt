@@ -1,5 +1,0 @@
-http://www.caf.fr/allocataires/vies-de-famille/vivre-avec-un-handicap/vos-droits/80-des-handicaps-sont-invisibles-le-saviez-vous
-
-https://webaim.org/resources/contrastchecker/
-
-https://developer.mozilla.org/fr/docs/Web/CSS/Type_color

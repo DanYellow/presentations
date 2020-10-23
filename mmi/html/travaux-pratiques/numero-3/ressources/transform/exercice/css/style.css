@@ -144,7 +144,6 @@ h1 {
   border: 1px solid #fff;
   z-index: 6;
   background-color: rgba(0, 0, 0, 0.7);
-
   transform: scale(0);
   transition: transform 0.25s;
 }
@@ -172,19 +171,8 @@ h1 {
   z-index: 15;
   left: 0;
   top: 100%; /* Force l'élément à être en bas de de son parent */
-
-  /* transform-origin: top left; */
   transform: rotateZ(0deg);
   transition: transform 0.25s;
-}
-
-.element-conteneur.transition-3:hover .liste-options-conteneur {
-  transform: rotateZ(-10deg);
-}
-
-.element-conteneur.transition-3:hover figcaption::before,
-.element-conteneur.transition-3:hover p {
-  transform: scale(1);
 }
 
 .element-conteneur.transition-3 p {
