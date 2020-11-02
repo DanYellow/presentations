@@ -1,4 +1,4 @@
-TP2 : TP 2 - Slide 87 / Test position réalisé
-TP4 : TP 2 - Slide 110 / Gestion du menu 
+TP1 : TP 3 commencer TP3
+TP2 : TP 2 - Slide 87 / Test position realise
 TP3 : TP 2 - Slide 100
-TP1 : TP 2 - Flexbox terminé
+TP4 : TP 3 - Font size 
