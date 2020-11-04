@@ -4,16 +4,11 @@
 
 body {
   max-width: 1280px;
-  font-size: 16px;
   font-family: Helvetica, Arial, sans-serif;
   margin: 0 auto;
 
-  background: #d9a7c7; /* fallback for old browsers */
-  background: linear-gradient(
-    to bottom,
-    #fffcdc,
-    #d9a7c7
-  );
+  background: #d9a7c7;
+  background: linear-gradient(to bottom, #fffcdc, #d9a7c7);
 }
 
 .main {
@@ -40,4 +35,13 @@ h1 {
   background-color: aliceblue;
   display: inline-block;
   max-width: 100%;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+figure {
+  height: 25vh;
 }
