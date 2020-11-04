@@ -4,11 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TP#5 - Formulaires</title>
-    <link rel="stylesheet" href="normalize.css" />
+    <link rel="stylesheet" href="css/normalize.css" />
   </head>
   <body>
     <script>
-      return false;
       const formulaire = document.querySelector("form");
       formulaire?.addEventListener("submit", (evt) => {
         evt.preventDefault();
@@ -19,6 +18,10 @@
         for (const prop in objetDonneesFormulaire) {
           console.log(`champ : ${prop} => ${objetDonneesFormulaire[prop]}`);
         }
+        console.log(
+          "ggg",
+          JSON.stringify(Object.fromEntries(donneesFormulaire))
+        );
       });
     </script>
   </body>
