@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TP#5 - Formulaires</title>
+    <link rel="stylesheet" href="normalize.css" />
+  </head>
+  <body>
+    <script>
+      return false;
+      const formulaire = document.querySelector("form");
+      formulaire?.addEventListener("submit", (evt) => {
+        evt.preventDefault();
+
+        const donneesFormulaire = new FormData(formulaire);
+        const objetDonneesFormulaire = Object.fromEntries(donneesFormulaire);
+        console.log("Vous avez soumis les données ci-dessous :");
+        for (const prop in objetDonneesFormulaire) {
+          console.log(`champ : ${prop} => ${objetDonneesFormulaire[prop]}`);
+        }
+      });
+    </script>
+  </body>
+</html>
