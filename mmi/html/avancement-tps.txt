@@ -1,4 +1,4 @@
-TP1 : TP 3 commencer TP3
-TP2 : TP 2 - Slide 87 / Test position realise
-TP3 : TP 2 - commencer TP3
-TP4 : TP 3 - recommencer les liens
+TP1 : TP 3 - Recommencer les liens
+TP2 : TP 2 - Reprendre rapidement texte -> test
+TP3 : TP 2 - Commencer TP3
+TP4 : TP 3 - Recommencer les liens
