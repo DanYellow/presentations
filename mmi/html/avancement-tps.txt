@@ -1,4 +1,4 @@
 TP1 : TP 3 - Recommencer les liens
-TP2 : TP 2 - Reprendre rapidement texte -> test
-TP3 : TP 2 - Commencer TP3
+TP2 : TP 3 - Reprendre rapidement texte -> test
+TP3 : TP 3 - Recommencer les liens
 TP4 : TP 3 - Recommencer les liens
