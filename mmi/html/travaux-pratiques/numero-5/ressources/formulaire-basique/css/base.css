@@ -18,7 +18,8 @@ body {
   margin: 0 auto;
   border-left: var(--bordure-cote);
   border-right: var(--bordure-cote);
-  padding: 0 0.75em;
+  padding: 0 0.75em 0.75em;
+  background-color: rgba(255, 255, 255, 0.35);
 }
 
 header {
@@ -50,4 +51,13 @@ code {
   color: wheat;
   background-color: #333;
   padding: 0 5px;
+}
+
+/*
+ Reset de la balise textarea
+*/
+textarea {
+  /* resize: vertical; */ /* Décommenter pour associer le */
+  overflow: auto;
+  vertical-align: top;
 }
