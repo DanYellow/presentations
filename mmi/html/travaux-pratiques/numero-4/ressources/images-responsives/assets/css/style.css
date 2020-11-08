@@ -11,11 +11,6 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-}
-
 header {
   padding: 10px;
   margin-top: 10px;
