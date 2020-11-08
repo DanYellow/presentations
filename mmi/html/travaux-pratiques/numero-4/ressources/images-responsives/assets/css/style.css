@@ -99,3 +99,39 @@ header {
     display: none;
   }
 }
+
+/*
+Pour plus d'infos : https://developer.mozilla.org/fr/docs/Web/CSS/resolution
+*/
+@media (max-resolution: 163dpi) {
+  .est-sd {
+    display: initial;
+  }
+
+  .est-uhd,
+  .est-hd {
+    display: none;
+  }
+}
+
+@media (min-resolution: 164dpi) and (max-resolution: 192dpi) {
+  .est-hd {
+    display: initial;
+  }
+
+  .est-uhd,
+  .est-sd {
+    display: none;
+  }
+}
+
+@media (min-resolution: 193dpi) {
+  .est-uhd {
+    display: initial;
+  }
+
+  .est-hd,
+  .est-sd {
+    display: none;
+  }
+}
