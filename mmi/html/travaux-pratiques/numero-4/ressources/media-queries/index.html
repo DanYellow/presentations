@@ -8,33 +8,80 @@
     <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
-    <h1 class="title">TP sur les media queries</h1>
-    <p>
-      La spécification de niveau 4 pour les requêtes média ajoute des
-      améliorations syntaxiques pour les requêtes média qui portent sur un
-      intervalle (par exemple les critères de largeur et de hauteur).
-    </p>
+    <header>
+      <h1>Travaux pratiques sur les media queries</h1>
+      <p>But de la pratique : Voir les media queries</p>
+      <p>Consignes :</p>
+      <ul>
+        <li>
+          Éditer la règle @media de façon à ce que le titre "Ma galerie
+          d'images" plus gros sur un appareil dont la largeur d'écran est
+          inférieure ou égale à 320px
+        </li>
+        <li>
+          Ajouter une règle @media pour gérer un écran dont la taille est
+          supérieure ou égale à 400px et appliquer des déclarations sur
+          n'importe quel sélecteur CSS
+        </li>
+        <li>
+          Ajouter une règle @media pour gérer un écran ayant l'orientation
+          paysage (landscape en anglais)
+        </li>
+      </ul>
+    </header>
 
+    <nav class="nav-principale">
+      <ul>
+        <li><a href="#pratique-1">Pratique 1</a></li>
+        <li><a href="#pratique-2">Pratique 2</a></li>
+        <li><a href="#pratique-3">Pratique 3</a></li>
+        <li><a href="#pratique-4">Pratique 4</a></li>
+      </ul>
+    </nav>
+
+    <section class="exercice" id="pratique-1"></section>
+
+    <h2>Ma galerie d'images</h2>
     <ul class="liste-images">
       <li>
-        <img
-          srcset="
-            assets/images/panorama-640.png  1x,
-            assets/images/panorama-640.png  2x,
-            assets/images/panorama-1024.png 3x
-          "
-          src="assets/images/panorama-default.png"
-          alt="Image d'un panorama de Gaspésie"
-          class="img-responsive"
-        />
+        <img src="assets/images/chien-2.png" alt="Chien content" />
+      </li>
+      <li>
+        <img src="assets/images/chat.jpg" alt="Chat suspicieux" />
+      </li>
+      <li>
+        <img src="assets/images/muffins.jpg" alt="Muffins chocolat-banane" />
       </li>
       <li>
         <img
-          src="assets/images/muffins.jpg"
-          class="img-responsive"
-          alt="Muffins chocolat-banane"
+          src="assets/images/panorama.jpg"
+          alt="Photo d'un paysage de Gaspésie, Québec"
         />
       </li>
+      <li>
+        <img src="assets/images/chien.jpg" alt="Chien reniflant ?" />
+      </li>
+      <li>
+        <img src="assets/images/chien-banque.jpg" alt="" />
+      </li>
     </ul>
+
+    <div class="video-responsive">
+      <iframe src="https://player.vimeo.com/video/249675407"  frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+    <section class="textes">
+      <p>
+        Tous les jours, une demi-heure de reportage sans commentaire. Inspirés
+        par la célébrissime émission de radio américaine This American Life,
+        "Les Pieds sur Terre" s’organisent désormais autour de récits,
+        d’histoires vraies, une, deux ou trois par émission, qui tournent autour
+        d’un même thème. Ces histoires sont racontées à la première personne et
+        nourries d’éléments de reportage.
+      </p>
+
+      <p>Si deux valeurs <grid-line> sont utilisées pour la propriété, la valeur de grid-column-start sera définie avec la première valeur avant la barre oblique et la valeur de grid-column-end sera définie avec celle qui est située après la barre oblique. <br>
+        Un mot-clé qui indique que la propriété ne contribue pas au placement de l'élément sur la grille. Cela indique un placement automatique, une taille de fragment (span) automatique ou une taille par défaut de 1.</p>
+    </section>
   </body>
 </html>
