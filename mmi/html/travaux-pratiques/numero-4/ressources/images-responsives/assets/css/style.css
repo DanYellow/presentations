@@ -1,3 +1,4 @@
+/* On n'oublie pas la déclaration "box-sizing: border-box" sur tous les éléments */
 *,
 *::after,
 *::before {
@@ -64,7 +65,7 @@ header {
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1023px) {
+@media screen and (min-width: 768px) and (max-width: 1024px) {
   .est-tablette-portrait {
     display: initial;
   }
@@ -76,7 +77,7 @@ header {
   }
 }
 
-@media screen and (min-width: 1024px) and (max-width: 1099px) {
+@media screen and (min-width: 1025px) and (max-width: 1099px) {
   .est-tablette-paysage {
     display: initial;
   }
@@ -103,6 +104,7 @@ header {
 /*
 Pour plus d'infos : https://developer.mozilla.org/fr/docs/Web/CSS/resolution
 */
+/* résolution "normale" */
 @media (max-resolution: 163dpi) {
   .est-sd {
     display: initial;
@@ -114,6 +116,7 @@ Pour plus d'infos : https://developer.mozilla.org/fr/docs/Web/CSS/resolution
   }
 }
 
+/* haute résolution */
 @media (min-resolution: 164dpi) and (max-resolution: 192dpi) {
   .est-hd {
     display: initial;
@@ -125,6 +128,7 @@ Pour plus d'infos : https://developer.mozilla.org/fr/docs/Web/CSS/resolution
   }
 }
 
+/* très haute résolution */
 @media (min-resolution: 193dpi) {
   .est-uhd {
     display: initial;

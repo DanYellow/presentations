@@ -27,17 +27,18 @@
         <li>
           L'image
           <code> assets/images/balise-picture/salameche.png</code> s'affiche
-          pour un écran dont la taille est comprise à 767px
+          pour un écran dont la taille est inférieure ou égale à 767px (déjà
+          présent dans le code)
         </li>
         <li>
           L'image
           <code> assets/images/balise-picture/reptincel.png</code> s'affiche
-          pour un écran dont la taille est comprise entre 768px et 1023px
+          pour un écran dont la taille est comprise entre 768px et 1024px
         </li>
         <li>
           L'image
           <code> assets/images/balise-picture/dracaufeu.png</code> s'affiche
-          pour un écran dont la taille est comprise entre 1024px et 1099px
+          pour un écran dont la taille est comprise entre 1025px et 1099px
         </li>
         <li>
           L'image
@@ -52,21 +53,22 @@
       </ul>
 
       <picture>
-        <source srcset="assets/images/balise-picture/salameche.png" media="" />
+        <source
+          srcset="assets/images/balise-picture/salameche.png"
+          media="(max-width: 767px)"
+        />
 
         <img
           src="assets/images/balise-picture/defaut.png"
           alt="Famille d'évolution de Salamèche"
         />
         <figcaption>
-          <span class="est-mobile est-sd">Salamèche</span>
-          <span class="est-tablette-portrait est-sd">Reptincel</span>
-          <span class="est-tablette-paysage est-sd">Dracaufeu</span>
+          <span class="est-mobile">Salamèche</span>
+          <span class="est-tablette-portrait">Reptincel</span>
+          <span class="est-tablette-paysage">Dracaufeu</span>
           <span class="est-hd">Méga-Dracaufeu X</span>
           <span class="est-uhd">Méga-Dracaufeu Y</span>
-          <span class="est-pc-bureau est-sd"
-            >La famille d'évolution entière</span
-          >
+          <span class="est-pc-bureau">La famille d'évolution entière</span>
         </figcaption>
       </picture>
     </section>
