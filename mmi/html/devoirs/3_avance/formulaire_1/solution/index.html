@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3_avance - formulaire_1 - Solution</title>
+    <link rel="stylesheet" href="../../css_formulaires/normalize.css" />
+    <link rel="stylesheet" href="../../css_formulaires/style.css" />
+
+    <style>
+      :root {
+        --couleur-requis: tomato;
+      }
+      figure {
+        padding: 0;
+        margin: 0;
+        position: relative;
+        /* Etant donné que l'image provient d'un serveur, 
+        elle peut arriver avec un certain décalage. Ce qui va "déformer" la mise en page avant l'arrivée de l'image. 
+        Alors on met une taille minimale sur le conteneur de l'image pour limiter cet effet disgracieux. 
+        Commentez la ligne pour essayer */
+        min-height: 200px;
+        margin-bottom: 15px;
+      }
+
+      figure::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.75);
+      }
+
+      figure h2 {
+        position: absolute;
+        left: 5px;
+        bottom: 10px;
+        font-size: 2.5rem;
+        color: white;
+        margin: 0;
+      }
+
+      .conteneur-champ > input {
+        order: 1;
+      }
+
+      .conteneur-champ > label {
+        order: 0;
+      }
+
+      :required + label::after {
+        content: "*";
+        color: var(--couleur-requis);
+      }
+
+      .est-requis {
+        color: var(--couleur-requis);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>3_avance - formulaire_1 - Solution</h1>
+
+    <figure>
+      <h2>
+        Informations <br />
+        personnelles
+      </h2>
+      <img src="https://picsum.photos/1000/300" alt="" />
+    </figure>
+    <form action="#" method="POST">
+      <p>
+        Les champs suivis d'un <span class="est-requis">*</span> sont
+        obligatoires
+      </p>
+      <div class="conteneur-champ">
+        <input
+          type="text"
+          id="nom"
+          name="nom"
+          placeholder="Martin"
+          value="Laurentin"
+          required
+        />
+        <label for="nom"> Pseudo </label>
+      </div>
+      <div class="conteneur-champ">
+        <input
+          type="text"
+          id="prenom"
+          name="prenom"
+          placeholder="Thomas"
+          value="Fabrice"
+          required
+        />
+        <label for="nom"> Prénom </label>
+      </div>
+      <div class="conteneur-champ">
+        <p>Diplômes obtenus</p>
+        <div class="liste-choix">
+          <label for="baccalaureat">Baccalauréat</label>
+          <input type="checkbox" id="baccalaureat" name="baccalaureat" />
+
+          <label for="dut"> DUT </label>
+          <input type="checkbox" id="dut" name="dut" />
+
+          <label for="licence"> Licence </label>
+          <input type="checkbox" id="licence" name="licence" />
+
+          <label for="master"> Master </label>
+          <input type="checkbox" id="master" name="master" />
+
+          <label for="doctorat"> Doctorat </label>
+          <input type="checkbox" id="doctorat" name="doctorat" />
+        </div>
+      </div>
+
+      <button type="submit" class="btn-soumission">
+        <span>Envoyer</span>
+      </button>
+    </form>
+  </body>
+</html>
