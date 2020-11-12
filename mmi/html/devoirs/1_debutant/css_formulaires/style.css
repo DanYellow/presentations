@@ -15,3 +15,8 @@ body {
   flex-direction: column;
   margin-bottom: 10px;
 }
+
+.liste-choix input[type="radio"],
+.liste-choix input[type="checkbox"] {
+  margin-right: 10px;
+}
