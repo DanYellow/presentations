@@ -13,7 +13,10 @@ Code un site web responsive ayant les caractéristiques suivantes :
 
 Des liens vers des images sont déjà présentes dans le fichier `./index.html`. Vous devrez utiliser flexbox, on a pu le voir dans le TP#2.
 
-Pour vous assurer que vous avez bien réalisé les consignes, voici une liste de contrôle que vous pouvez cocher au fur et à mesure de votre progression :
+- [Voir le TP#2](https://github.com/DanYellow/presentations/raw/master/mmi/html/travaux-pratiques/numero-2/presentation%2Bnotes.pdf)
+- [Voir la leçon sur le responsive web design](https://cours.u-cergy.fr/mod/lesson/view.php?id=134687&pageid=1127)
+
+Pour vous assurer que vous avez bien réalisé les consignes, voici une liste de contrôles que vous pouvez cocher au fur et à mesure de votre progression :
 
 - [x] Lecture des consignes
 - [ ] Ajout de la media query manquante
