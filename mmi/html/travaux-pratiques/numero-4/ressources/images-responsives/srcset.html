@@ -47,12 +47,12 @@
         </li>
         <li>
           Mettre comme valeur pour l'attribut src, une image du dossier
-          "assets/images/attribut-srcset/"
+          "assets/images/attribut-srcset/densite"
         </li>
         <li>
           Définir la valeur de l'attribut srcset avec autant de valeurs qu'il y
-          a d'images dans le dossier "assets/images/attribut-srcset/" avec le
-          descripteur de densité (x) jusqu'à 3x
+          a d'images dans le dossier "assets/images/attribut-srcset/densite"
+          avec le descripteur de densité (x) jusqu'à 3x
         </li>
         <li>
           Tester avec le mode responsive du navigateur (ctrl + maj + m sur
@@ -64,16 +64,25 @@
       </ul>
       <!-- Faire votre TP ici -->
 
+      <img
+        src="assets/images/attribut-srcset/densite/pizza@1x.jpg"
+        srcset=""
+        alt=""
+      />
+
       <hr />
       <h2>Attributs <code>srcset</code> et <code>sizes</code> - Partie 2</h2>
       <p>Consignes</p>
       <ul>
         <li>
-          Refaire la même chose avec des descripteurs de largeur avec comme
-          valeur le nombre contenu dans le nom de l'image
+          Refaire la même chose avec des descripteurs de largeur (w) avec comme
+          valeur le nombre contenu dans le nom de l'image. Les images contenues
+          dans le dossier "assets/images/attribut-srcset/largeur"
         </li>
         <li>
           Ajouter l'attribut sizes avec des media queries et une taille <br />
+          Exemple : Ex : (max-width : 480px) 100vw, (min-width : 481px) 50vw
+          <br />
           Ne pas oublier la valeur par défaut
         </li>
         <li>
@@ -84,8 +93,21 @@
           Jouer sur la taille de l'écran
         </li>
       </ul>
-
       <!-- Faire votre TP ici -->
+      <div class="conteneur">
+        <figure>
+          <img
+            src="assets/images/attribut-srcset/largeur/image-320.png"
+            srcset="assets/images/attribut-srcset/largeur/image-320.png 320w"
+            alt=""
+          />
+          <figcaption>
+            Le navigateur va choisir la taille adéquate en fonction des tailles
+            fournies. Si l'attribut "sizes n'est pas défini, le navigateur
+            estime"
+          </figcaption>
+        </figure>
+      </div>
     </section>
   </body>
 </html>
