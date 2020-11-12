@@ -39,6 +39,7 @@ Pour vous assurer que vous avez bien réalisé les consignes, voici une liste de
 - [ ] Ajout du champ "nom"
 - [ ] Ajout du champ "prenom"
 - [ ] Ajout du champ "diplome"
+- [ ] Ajout du champ "diplome_pays"
 - [ ] Ajout de l'image d'en-tête
 - [ ] Ajout du calque au-dessus de l'image
 - [ ] Ajout du texte
@@ -48,4 +49,5 @@ Pour vous assurer que vous avez bien réalisé les consignes, voici une liste de
 Si _le mieux est l’ennemi du bien_, on peut quand même se permettre d'aller un peu plus loin.
 
 - [ ] Indiquer les champs requis en y ajoutant un asterique (\*) au niveau du label et ce sans utiliser de classe, uniquement des pseudo-classe
+  - La propriété "order" de flexbox sera d'une grande aide. Pour rappel, si on peut cibler un élément qui en suit un autre, on ne peut pas cibler un élément qui en précède un autre
 - [ ] Indiquer que les champs (labels de champ) suivi d'un "\*" sont obligatoires

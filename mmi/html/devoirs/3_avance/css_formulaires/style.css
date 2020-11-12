@@ -44,5 +44,7 @@ img {
 }
 
 img {
-  display: block; /* Eh oui, une image est de type inline à la base */
+  /* Eh oui, une image est de type inline à la base.
+  On rajoute cette déclaration pour enlever un espace qui se crée entre la balise <img /> et son conteneur */
+  display: block;
 }
