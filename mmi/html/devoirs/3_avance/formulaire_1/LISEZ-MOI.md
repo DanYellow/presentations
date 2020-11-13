@@ -33,7 +33,7 @@ N'oubliez pas flexbox, c'est un très bon allié pour la mise en page, et pour v
 
 [Documentation de la balise `<input>`](https://developer.mozilla.org/fr/docs/Web/HTML/Element/input)
 
-Pour vous assurer que vous avez bien réalisé les consignes, voici une liste de contrôle que vous pouvez cocher au fur et à mesure de votre progression :
+Pour vous assurer que vous avez bien réalisé les consignes, voici une liste de contrôles que vous pouvez cocher au fur et à mesure de votre progression :
 
 - [x] Lecture des consignes
 - [ ] Ajout du champ "nom"
