@@ -1,0 +1,18 @@
+:root {
+  --rouge-bcn: #b9252e;
+  --largeur-max-site: 1100px;
+  --police-segoe: "Segoe UI", Roboto, "Helvetica Neue", Arial, Noto Sans,
+    sans-serif;
+}
+
+/* smartphones (portrait et paysage) */
+@media screen and (max-width: 767px) {
+}
+
+/* tablettes (portrait et paysage) */
+@media screen and (min-width: 768px) and (max-width: 1112px) {
+}
+
+/* PC */
+@media screen and (min-width: 1113px) {
+}

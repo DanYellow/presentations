@@ -1,0 +1,45 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+ol {
+  list-style-type: decimal;
+}
+
+html {
+  width: 100%;
+  font-size: 1rem;
+  font-family: Helvetica, Arial, sans-serif;
+
+  background-image: linear-gradient(#ffffe8, #ffffff);
+  background-repeat: no-repeat;
+}
+
+.rouge-bcn {
+  color: var(--rouge-bcn);
+}
+
+.encart-covid {
+  background-color: white;
+  padding: 40px;
+  border-radius: 3px;
+}
+
+/* smartphones (portrait et paysage) */
+@media screen and (max-width: 767px) {
+}
+
+/* tablettes (portrait et paysage) */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+}
+
+/* PC */
+@media screen and (min-width: 1025px) {
+}
