@@ -16,7 +16,7 @@ ol {
 html {
   width: 100%;
   font-size: 1rem;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: Helvetica, Arial;
 
   background-image: linear-gradient(#ffffe8, #ffffff);
   background-repeat: no-repeat;
@@ -24,6 +24,10 @@ html {
 
 .rouge-bcn {
   color: var(--rouge-bcn);
+}
+
+.contenu {
+  max-width: var(--largeur-max-site);
 }
 
 .encart-covid {
@@ -37,9 +41,16 @@ html {
 }
 
 /* tablettes (portrait et paysage) */
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+@media screen and (min-width: 768px) and (max-width: 1112px) {
+}
+
+/* tablette + mobile */
+@media screen and (max-width: 1112px) {
+  .contenu {
+    padding: 0 2.66666666667%;
+  }
 }
 
 /* PC */
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 1113px) {
 }
