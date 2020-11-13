@@ -50,7 +50,7 @@ Pour vous assurer que vous avez bien réalisé les consignes, voici une liste de
 Si _le mieux est l’ennemi du bien_, on peut quand même se permettre d'aller un peu plus loin.
 
 - [ ] Afficher de façon personnalisée le choix sélectionnée dans la liste déroulante. On ne doit plus voir la flèche à droite du `<select>` elle doit être remplacée par une image (vectorielle ou matricielle)
-  - Rappelez-vous qu'on peut imbriquer des balises et changer la taille des balises grâce à la propriété `width`
+  - Rappelez-vous qu'on peut imbriquer des balises, changer la taille des balises grâce à la propriété `width` et cacher les éléments qui dépassent grâce à la déclaration `overflow: hidden`
 - [ ] Indiquer les champs (labels de champ) optionels
 - [ ] Autoriser uniquement les adresses https:// pour le champ "url_site"
 - [ ] La longueur maximale de l'url doit être de 42 caractères
