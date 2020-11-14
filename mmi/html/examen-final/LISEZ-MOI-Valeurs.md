@@ -67,4 +67,4 @@ Couleur d'arrière plan - opacité 65% :
 |                   taille police : 20px                    |
 |                       texte normal                        |
 |                      police : Arial                       |
-|                      couleur : black                      |
+|           couleur : black / FB4F5F pour l'icone           |

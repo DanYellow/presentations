@@ -5,9 +5,9 @@ Cet examen vise à tester les compétences que vous avez acquises lors des diff�
 Il vous faudra intégrer un site web responsive à partir d'un code donné qu'il faudra compléter. A noter qu'il pourrait très fortement avoir des erreurs et manquements dans le code fourni, à vous de les corriger.
 Avant de commencer à développer : **ouvrez le fichier `index.html`** et assurez-vous bien de voir la chose suivante dans votre navigateur :
 
-![](./_sources/integration-depart.png)
+![](./_sources/integration-depart.jpg)
 
-Si vous n'avez pas ceci qui s'affiche. Vérifiez bien d'avoir la structure de dossier suivante :
+Si vous n'avez pas ceci qui s'affiche. Assurez-vous d'avoir la structure de dossiers suivante :
 
 - [assets/](.\examen-final\assets)
   - [css/](.\examen-final\assets\css)
@@ -25,7 +25,14 @@ Si vous n'avez pas ceci qui s'affiche. Vérifiez bien d'avoir la structure de do
 - [LISEZ-MOI.md](.\examen-final\LISEZ-MOI.md)
 
 Les sources fournies proviennent de PhotoShop, **le logiciel n'a pas le même rendu notamment au niveau des polices**. Ne vous inquiétez pas si ça ne ressemble pas aux sources fournies.
-Le fichier PhotoShop est le fichier `sources/design.psd`, pour celles et ceux qui n'ont pas PhotoShop, vous pouvez l'ouvrir en ligne sur le site [photopea.com](https://www.photopea.com/) ou encore Gimp
+Le fichier PhotoShop est le fichier `sources/design.psd`, pour celles et ceux qui n'ont pas PhotoShop, vous pouvez l'ouvrir en ligne sur le site [photopea.com](https://www.photopea.com/) ou encore Gimp. Si vous n'êtes pas à l'aise avec le logiciel, voici des liens vers la documentation de chaque page, elle explique les tailles, les couleurs ou encore distances entre certains éléments :
+
+- Page d'accueil : Voir fichier LISEZ-MOI-Accueil.md
+- Page valeurs : Voir fichier LISEZ-MOI-Valeurs.md
+- Page carte : Voir fichier LISEZ-MOI-Carte.md
+- Page contact : Voir fichier LISEZ-MOI-Contact.md
+
+Si certaines mesures sont absentes, cela signifie que c'est à vous de décider (notamment les marges verticales) ou que des propriétés CSS que vous utiliserez en découlera les espaces.
 
 # Présentation du site
 
@@ -65,7 +72,14 @@ Etant donné que le travail peut être fait en groupe, **un seul membre du group
 
 # Mise en page
 
-Le conteneur principal du site possède une largeur de 1100px, il est déjà présent sous les traits de la classe "contenu". Vous n'avez pas à être [Pixel Perfect](https://cours.u-cergy.fr/mod/lesson/view.php?id=134687&pageid=1127), d'autant plus que les mobiles n'ont pas la même taille d'écran. Concernant les espaces entre les éléments, ils n'ont pas à être exactement comme le design mais ils doivent s'en approcher quand même.
+Le conteneur principal du site possède une largeur de 1100px, il est déjà présent sous les traits de la classe "contenu". Vous n'avez pas à être [Pixel Perfect](https://cours.u-cergy.fr/mod/lesson/view.php?id=134687&pageid=1127), d'autant plus que les mobiles n'ont pas la même taille d'écran, rappelez-vous de ce qui a été dit dans le TP4, il y a également la leçon concernant le CSS, il y a deux parties concernant le responsive web design sur ENT. Concernant les espaces entre les éléments, ils n'ont pas à être exactement comme le design mais ils doivent s'en approcher quand même.
+
+Dans les fichiers ci-dessous vous trouvez plus de détails concernant les tailles, les couleurs ou encore les polices à utiliser :
+
+- Page d'accueil : Voir fichier LISEZ-MOI-Accueil.md
+- Page valeurs : Voir fichier LISEZ-MOI-Valeurs.md
+- Page carte : Voir fichier LISEZ-MOI-Carte.md
+- Page contact : Voir fichier LISEZ-MOI-Contact.md
 
 ## Header / Haut de page
 
@@ -105,16 +119,22 @@ Liens des réseaux sociaux :
 - Téléphone : https://www.u-cergy.fr/fr/index.html
 - mail : hello.world@yopmail.com
 
-## Barre réseau sociaux
+Pour intégrer les icônes deux choix s'offrent à vous :
+
+- Utilisation des images dans le dossier `assets/images/icones/`
+- Utilisation de la police d'icônes gérée dans le dossier `assets/fonts` **(point bonus)**. <br>
+  Si vous arrivez à gérer les webfonts, la couleur des icônes est `f7f7f7`. Ajoutez également une couleur au survol.
+  Pour savoir comment rajouter les webfonts dans votre projet, regardez le contenu du fichier `assets/fonts/demo.html`, avec tout ce que nous avons appris, notamment l'utilisation de la console du navigateur, vous devriez être capable d'utiliser les webfonts. Observez les fichiers liés au fichier `assets/fonts/demo.html`.
+
+## Barre réseaux sociaux
 
 |       Version mobile <br />(iPhone 6 - 750px de largeur d'écran)        |  Version pour PC <br />(largeur d'écran supérieure à 1113px)  |
 | :---------------------------------------------------------------------: | :-----------------------------------------------------------: |
 | **Absente. Cette partie ne doit pas apparaître sur mobile et tablette** | ![](./_sources/images/mise-en-page/barre-reseaux-sociaux.jpg) |
-
-- Dimension : 80 x 330px
-- Couleur d'arrière-plan : white
-- Bordure : 2px solid 5d5d5d
-- Arrondi des coins : 5px
+|                                                                         |                    Dimension : 80 x 330px                     |
+|                                                                         |                Couleur d'arrière-plan : white                 |
+|                                                                         |                  Bordure : 2px solid 5d5d5d                   |
+|                                                                         |   Arrondi des coins : 5px (côtés haut gauche et bac gauche)   |
 
 Le composant doit être tout le temps visible même quand on défile dans la page.
 
@@ -126,12 +146,12 @@ Liens des réseaux sociaux :
 - Téléphone : https://www.u-cergy.fr/fr/index.html
 - mail : hello.world@yopmail.com
 
-## Autres pages
+Pour intégrer les icônes deux choix s'offrent à vous :
 
-- Page d'accueil : Voir fichier LISEZ-MOI-Accueil.md
-- Page valeurs : Voir fichier LISEZ-MOI-Valeurs.md
-- Page carte : Voir fichier LISEZ-MOI-Carte.md
-- Page contact : Voir fichier LISEZ-MOI-Contact.md
+- Utilisation des images dans le dossier `assets/images/icones/`
+- Utilisation de la police d'icônes gérée dans le dossier `assets/fonts` **(point bonus)**.<br>
+  Si vous arrivez à gérer les webfonts, la couleur des icônes est `444444`. Ajoutez également une couleur au survol.
+  Pour savoir comment rajouter les webfonts dans votre projet, regardez le contenu du fichier `assets/fonts/demo.html`, avec tout ce que nous avons appris, notamment l'utilisation de la console du navigateur, vous devriez être capable d'utiliser les webfonts. Observez les fichiers liés au fichier `assets/fonts/demo.html`.
 
 ## Textes
 
