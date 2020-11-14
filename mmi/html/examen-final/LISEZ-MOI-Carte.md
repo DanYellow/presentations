@@ -1,4 +1,4 @@
-# Page Nos valeurs
+# Page Carte
 
 | Version mobile <br />(iPhone 6 - 750px de largeur d'écran) | Version pour PC <br />(largeur d'écran supérieure à 1113px) |
 | :--------------------------------------------------------: | :---------------------------------------------------------: |

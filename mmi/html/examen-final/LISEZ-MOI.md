@@ -76,7 +76,7 @@ Etant donné que le travail peut être fait en groupe, **un seul membre du group
 
 # Mise en page
 
-Le conteneur principal du site possède une largeur de 1100px, il est déjà présent sous les traits de la classe "contenu". Vous n'avez pas à être [Pixel Perfect](https://cours.u-cergy.fr/mod/lesson/view.php?id=134687&pageid=1127), d'autant plus que les mobiles n'ont pas la même taille d'écran, rappelez-vous de ce qui a été dit dans le TP4, il y a également la leçon concernant le CSS, il y a deux parties concernant le responsive web design sur ENT. Concernant les espaces entre les éléments, ils n'ont pas à être exactement comme le design mais ils doivent s'en approcher quand même.
+Le conteneur principal du site possède une largeur de 1000px, il est déjà présent sous les traits de la classe "contenu". Vous n'avez pas à être [Pixel Perfect](https://cours.u-cergy.fr/mod/lesson/view.php?id=134687&pageid=1127), d'autant plus que les mobiles n'ont pas la même taille d'écran, rappelez-vous de ce qui a été dit dans le TP4, il y a également la leçon concernant le CSS, il y a deux parties concernant le responsive web design sur ENT. Concernant les espaces entre les éléments, ils n'ont pas à être exactement comme le design mais ils doivent s'en approcher quand même.
 
 Dans les fichiers ci-dessous vous trouvez plus de détails concernant les tailles, les couleurs ou encore les polices à utiliser :
 
