@@ -25,7 +25,7 @@
 |                      police : Segoe UI                      |                        police : Segoe UI                        |
 |             couleur : b9252e / black (au hover)             |               couleur : b9252e / black (au hover)               |
 
-Au clic que les éléments du sous-menu, l'utilisateur doit atteindre la partie correspondante dans la page.
+Au clic sur les éléments du sous-menu, l'utilisateur doit atteindre la partie correspondante dans la page.
 **Notez bien que, sur mobile, le menu devient défilable.**
 
 | Version mobile <br />(iPhone 6 - 750px de largeur d'écran) | Version pour PC <br />(largeur d'écran supérieure à 1113px) |

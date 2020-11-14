@@ -33,6 +33,15 @@ Notez que ce style s'applique également aux textes "Saveurs du monde", "Les gou
 |                       police : Segoe UI                        |
 |            couleur : b9252e (prix) / black (titre)             |
 
+| ![](./_sources/images/mise-en-page/sub-menu-menu.jpg) |
+| :---------------------------------------------------: |
+|                 taille police : 30px                  |
+|                      texte gras                       |
+|                   police : Segoe UI                   |
+|          couleur : b9252e / black (au hover)          |
+
+**Présent uniquement sur mobile**. Au clic sur les éléments du sous-menu, l'utilisateur doit atteindre la partie correspondante dans la page.
+
 | Version mobile <br />(iPhone 6 - 750px de largeur d'écran) | Version pour PC <br />(largeur d'écran supérieure à 1113px) |
 | :--------------------------------------------------------: | :---------------------------------------------------------: |
 |    ![](./_sources/images/mise-en-page/mobile-menu.jpg)     |       ![](./_sources/images/mise-en-page/pc-menu.jpg)       |

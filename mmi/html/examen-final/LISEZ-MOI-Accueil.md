@@ -47,17 +47,17 @@
 |                   police : Segoe UI                   |                   police : Arial                    |              police : Segoe UI               |
 |                    couleur : noir                     |                   couleur : noir                    |               couleur : b9252e               |
 
-| ![](./_sources/images/mise-en-page/btn-carte-complete.jpg) | ![](./_sources/images/mise-en-page/btn-carte-complete-hover.jpg) |
-| :--------------------------------------------------------: | :--------------------------------------------------------------: |
-|                  taille de police : 24px                   |                     taille de police : 24px                      |
-|                         texte gras                         |                            texte gras                            |
-|                     police : Segoe UI                      |                        police : Segoe UI                         |
-|                      couleur : white                       |                         couleur : white                          |
-|              couleur d'arrière-plan : b9252e               |                 couleur d'arrière-plan : 730000                  |
-|                 contour : 2px solid 730000                 |                    couleur : 2px solid b9252e                    |
-|                  arrondi des coins : 5px                   |                     arrondi des coins : 5px                      |
-|                      largeur : 500px                       |                         largeur : 500px                          |
-|          marge intérieure (basse et haute) : 20px          |             marge intérieure (basse et haute) : 20px             |
+| ![](./_sources/images/mise-en-page/btn-carte-complete.jpg) <br /> état normal | ![](./_sources/images/mise-en-page/btn-carte-complete-hover.jpg) <br /> état survol |
+| :---------------------------------------------------------------------------: | :---------------------------------------------------------------------------------: |
+|                            taille de police : 24px                            |                               taille de police : 24px                               |
+|                                  texte gras                                   |                                     texte gras                                      |
+|                               police : Segoe UI                               |                                  police : Segoe UI                                  |
+|                                couleur : white                                |                                   couleur : white                                   |
+|                        couleur d'arrière-plan : b9252e                        |                           couleur d'arrière-plan : 730000                           |
+|                          contour : 2px solid 730000                           |                             couleur : 2px solid b9252e                              |
+|                            arrondi des coins : 5px                            |                               arrondi des coins : 5px                               |
+|                                largeur : 500px                                |                                   largeur : 500px                                   |
+|                   marge intérieure (basse et haute) : 20px                    |                      marge intérieure (basse et haute) : 20px                       |
 
 | ![](./_sources/images/mise-en-page/texte-newsletter.jpg) |
 | :------------------------------------------------------: |
@@ -79,11 +79,12 @@
 |                   police : Segoe UI                   |                  police : Segoe UI                   |
 |                    couleur : black                    |                   couleur : ff0000                   |
 
-| ![](./_sources/images/mise-en-page/champ-adresse-email.jpg) | ![](./_sources/images/mise-en-page/btn-subscribe.jpg) |
-| :---------------------------------------------------------: | :---------------------------------------------------: |
-|                       hauteur : 52px                        |                    hauteur : 52px                     |
-|                        texte normal                         |                      texte gras                       |
-|                   taille de police : 16px                   |                taille de police : 24px                |
-|                       police : Arial                        |                   police : Segoe UI                   |
-|                       couleur : black                       |                    couleur : white                    |
-|                   arrondi des coins : 5px                   |                arrondi des coins : 5px                |
+| ![](./_sources/images/mise-en-page/champ-adresse-email.jpg) |        ![](./_sources/images/mise-en-page/btn-subscribe.jpg)         |
+| :---------------------------------------------------------: | :------------------------------------------------------------------: |
+|                       hauteur : 52px                        |                            hauteur : 52px                            |
+|                        texte normal                         |                              texte gras                              |
+|                   taille de police : 16px                   |                       taille de police : 24px                        |
+|                       police : Arial                        |                          police : Segoe UI                           |
+|                       couleur : black                       |                           couleur : white                            |
+|                   arrondi des coins : 5px                   |                       arrondi des coins : 5px                        |
+|                                                             | couleur d'arrière-plan : b9252e (état normal) / 730000 (état survol) |
