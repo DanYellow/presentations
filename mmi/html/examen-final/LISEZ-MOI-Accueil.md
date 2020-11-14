@@ -59,6 +59,8 @@
 |                                largeur : 500px                                |                                   largeur : 500px                                   |
 |                   marge intérieure (basse et haute) : 20px                    |                      marge intérieure (basse et haute) : 20px                       |
 
+Cet élément doit permettre d'atteindre la page de la carte
+
 | ![](./_sources/images/mise-en-page/texte-newsletter.jpg) |
 | :------------------------------------------------------: |
 |                   taille police : 16px                   |
