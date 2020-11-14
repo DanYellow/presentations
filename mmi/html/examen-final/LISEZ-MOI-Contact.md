@@ -51,12 +51,12 @@
 |                       police : Arial                       |
 |                      couleur : black                       |
 
-| ![](./_sources/images/mise-en-page/label-formulaire.jpg) |
-| :------------------------------------------------------: |
-|                   taille police : 16px                   |
-|                        texte gras                        |
-|                    police : Segoe UI                     |
-|     couleur : black / fb4f5f (pour l'astérisque \*)      |
+| ![](./_sources/images/mise-en-page/label-formulaire.jpg) <br> **Idem pour tous les labels du formulaire** |
+| :-------------------------------------------------------------------------------------------------------: |
+|                                           taille police : 16px                                            |
+|                                                texte gras                                                 |
+|                                             police : Segoe UI                                             |
+|                              couleur : black / fb4f5f (pour l'astérisque \*)                              |
 
 | ![](./_sources/images/mise-en-page/select-contact.jpg) |
 | :----------------------------------------------------: |
@@ -66,7 +66,13 @@
 |                arrondi des coins : 5px                 |
 |       marge intérieure (gauche et droite) : 10px       |
 
-Si vous n'arrivez pas à réaliser le select de cette façon, vous pouvez afficher la version normale mais vous n'aurez pas tous les points concernant l'intégration.
+Si vous n'arrivez pas à réaliser le select de cette façon, affichez-le comme vous le pouvez, mais vous n'aurez pas tous les points concernant l'intégration.
+Liste de choix du select :
+
+- Commande / Réservation
+- Privatisation
+- Candidature spontanée
+- Autre
 
 | ![](./_sources/images/mise-en-page/input-label.jpg) |
 | :-------------------------------------------------: |
@@ -80,6 +86,7 @@ Si vous n'arrivez pas à réaliser le select de cette façon, vous pouvez affich
 
 - placeholder du champ "adresse e-mail" : example@yopmail.com
 - placeholder du champ "message" : Contenu de votre message
+- bordure des éléments de formulaire : 2px solid black
 
 |     ![](./_sources/images/mise-en-page/envoyer-btn-contact.jpg)      |
 | :------------------------------------------------------------------: |

@@ -51,6 +51,7 @@ Toutes les images de design du site sont présentes dans le dossier \_sources/im
 
 # Critères évaluation
 
+Votre site sera testé sur Firefox et Chrome, il en sera de même pour la partie responsive, la mode "vue responsive" sera utilisée pour simuler un terminal mobile. Assurez-vous que votre projet fonctionne correctement sur **les deux navigateurs**.
 Voir le fichier `grille-notation-examen-final.ods`.
 Merci de mettre les noms et prénoms de tous les membres du groupe dans la cellule en haut à gauche du fichier. Pour rappel vous n'avez pas le droit d'être plus de trois membres au sein d'un groupe.
 
@@ -161,3 +162,23 @@ Le projet utilise deux polices :
 
 - Arial pour le corps de texte
 - Segoe UI pour les titres. Police présente dans le fichier `./assets/css/variables.css` sous la forme d'une variable css
+
+## Images
+
+Toutes les images sont dans le dossier `assets/images`, elles sont toutes séparées par pages / rôles, et proposées (sauf les icônes) dans différentes résolutions. Si vous ne savez pas comment gérer les différentes résolutions mettez qu'une seule image, vous n'aurez pas tous les points mais ça fonctionnera. Allez à l'essentiel.
+Conscient que vous ne pourrez pas tester votre projet sur des écrans de résolution différentes, chaque image (sauf celles du dossier icones) ont leur résolution écrite en bas à droite. Ainsi en jouant sur le mode responsive des navigateurs, vous verrez si la bonne image est chargée.
+
+## Formulaires
+
+Le site contient deux formulaires : un sur la page d'accueil et l'autre sur la page "contact". Dans les deux cas, la validation du formulaire doit être gérée par le navigateur. **Dans les deux formulaires tous les champs sont requis.**
+
+- formulaire de newsletter : les données doivent passer dans l'url
+- formulaire de contact : les données doivent passer dans le corps de la requête (autrement dit on ne doit pas voir les données dans l'url)
+
+# Conseils
+
+- Si vous travaillez à plusieurs, je vous conseille de faire des points régulièrement (quotidiennement si possible), et de vous poser les questions suivantes :
+  - J'ai fait quoi hier ?
+  - Je compte faire quoi aujourd'hui ?
+  - Quels problèmes ai-je présentement ?
+- Regardez les TP, devoirs et autres, ils peuvent contenir des indices concernant la façon dont il faut intégrer certaines choses.

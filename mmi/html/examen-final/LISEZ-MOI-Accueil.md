@@ -87,4 +87,6 @@
 |                       police : Arial                        |                          police : Segoe UI                           |
 |                       couleur : black                       |                           couleur : white                            |
 |                   arrondi des coins : 5px                   |                       arrondi des coins : 5px                        |
-|                                                             | couleur d'arrière-plan : b9252e (état normal) / 730000 (état survol) |
+|              placeholder : example@yopmail.com              | couleur d'arrière-plan : b9252e (état normal) / 730000 (état survol) |
+|          type de données attendue : adresse e-mail          |                                                                      |
+|    bordure des éléments de formulaire : 2px solid black     |                                                                      |
