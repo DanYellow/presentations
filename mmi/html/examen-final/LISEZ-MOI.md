@@ -69,7 +69,7 @@ Dans la partie "Examen final", il y a un devoir nommé "Rendu devoir site "Bienv
 
 ## **En aucun cas vous ne devez rendre le dossier `_sources`.**
 
-Si jamais l'envoi de votre devoir sur ENT ne fonctionne pas. Faites une archive des documents demandés ayant le format suivant NOM-PRENOM (d'un membre du groupe, vu que vous êtes censé avoir mis le nom de tous les membres du groupe dans le fichier `./grille-notation-examen-final.ods`) et envoyez-les moi à l'adresse e-mail suivante : **danielo.jean-louis@u-cergy.fr**
+Si jamais l'envoi de votre devoir sur ENT ne fonctionne pas. Faites une archive des documents demandés ayant le format suivant NOM-PRENOM (d'un membre du groupe, vu que vous êtes censé avoir mis le nom de tous les membres du groupe dans le fichier `./grille-notation-examen-final.ods`) et envoyez-les moi à l'adresse e-mail suivante : **danielo.jean-louis@cyu.fr**
 Par email, la date de réception de l'email fera foi, alors n'envoyez pas l'email à 23h59.
 
 Etant donné que le travail peut être fait en groupe, **un seul membre du groupe doit faire le dépôt sur ENT ou l'envoyer l'email.**

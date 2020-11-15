@@ -40,7 +40,7 @@ Notez que ce style s'applique également aux textes "Saveurs du monde", "Les gou
 |                   police : Segoe UI                   |
 |          couleur : b9252e / black (au hover)          |
 
-**Présent uniquement sur mobile**. Au clic sur les éléments du sous-menu, l'utilisateur doit atteindre la partie correspondante dans la page. Le menu est défilable et garde sa place dans la page, il ne suit ne suit pas le défilement de la page.
+**Présent uniquement sur mobile**. Au clic sur les éléments du sous-menu, l'utilisateur doit atteindre la partie correspondante dans la page. Le menu est défilable et garde sa place dans la page, il ne suit pas le défilement de la page.
 
 | Version mobile <br />(iPhone 6 - 750px de largeur d'écran) | Version pour PC <br />(largeur d'écran supérieure à 1113px) |
 | :--------------------------------------------------------: | :---------------------------------------------------------: |
