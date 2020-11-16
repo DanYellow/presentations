@@ -139,3 +139,7 @@ Pour plus d'infos : https://developer.mozilla.org/fr/docs/Web/CSS/resolution
     display: none;
   }
 }
+
+.done {
+  text-decoration: line-through;
+}
