@@ -1,7 +1,7 @@
-TP1 : TP 3 - Recommencer les liens
-TP2 : TP 4 - Commencer 
-TP3 : TP 3 - Recommencer les liens (refaire test css/variables)
-TP4 : TP 3 - Recommencer les liens
+TP1 : TP 3 - Recommencer les liens (ne pas faire le test)
+TP2 : TP 4 - Pratique terminee concernant les media queries dans le css
+TP3 : TP 3 - Terminé
+TP4 : TP 3 - Terminé
 
-TD1 : Pratique terminÈe concernant les media queries dans le css
-TD2 : Reprendre la pratique sur la balise picture
+TD1 : Pratique terminee concernant les media queries dans le css
+TD2 : Terminé
