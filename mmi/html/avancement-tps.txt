@@ -1,7 +1,7 @@
-TP1 : TP 3 - Recommencer les liens (ne pas faire le test)
-TP2 : TP 4 - Pratique terminee concernant les media queries dans le css
-TP3 : TP 3 - Terminé
-TP4 : TP 3 - Terminé
+TP1 : Terminé
+TP2 : Terminé
+TP3 : Terminé
+TP4 : Terminé
 
-TD1 : Pratique terminee concernant les media queries dans le css
+TD1 : Terminé
 TD2 : Terminé
